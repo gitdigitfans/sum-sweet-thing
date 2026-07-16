@@ -1084,16 +1084,17 @@ body {
 
 /* Responsive */
 @media (max-width: 900px) {
-  .results-marquee { max-width: 100%; height: 620px; gap: 0.9rem; }
+  .results-marquee { max-width: 100%; height: 560px; gap: 0.9rem; }
   .results-track { gap: 0.9rem; }
 }
 
 @media (max-width: 600px) {
-  .results-marquee { max-width: 100%; height: 520px; gap: 0.75rem; padding: 0 0.5rem; }
+  .results-marquee { max-width: 100%; height: 460px; gap: 0.75rem; padding: 0 0.5rem; }
   .results-track { gap: 0.75rem; }
   .results-card { border-radius: 20px; }
-  .results-column--up .results-track { animation-duration: 42s; }
-  .results-column--down .results-track { animation-duration: 42s; }
+  .results-column--up .results-track { animation-duration: 50s; }
+  .results-column--down .results-track { animation-duration: 50s; }
+
   .lightbox-arrow { width: 44px; height: 44px; }
   .lightbox-arrow svg { width: 24px; height: 24px; }
   .lightbox-prev { right: 0.75rem; }

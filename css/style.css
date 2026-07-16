@@ -1532,24 +1532,21 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
+  position: relative;
+  z-index: 1;
 }
 
-@keyframes pricingFlipIn {
-  0%   { opacity: 0; transform: rotateY(0deg) scale(0.6); }
-  60%  { opacity: 1; transform: rotateY(360deg) scale(1.04); }
-  100% { opacity: 1; transform: rotateY(360deg) scale(1); }
+@keyframes pricingFadeUp {
+  0%   { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 .pricing-card.reveal.active .pricing-card-inner {
-  animation: pricingFlipIn 1.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: pricingFadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
-.pricing-card.reveal.active:nth-child(1) .pricing-card-inner { animation-delay: 0.1s; }
-.pricing-card.reveal.active:nth-child(2) .pricing-card-inner { animation-delay: 0.35s; }
-.pricing-card.reveal.active:nth-child(3) .pricing-card-inner { animation-delay: 0.6s; }
-
-.pricing-card.reveal.active { opacity: 1; }
+.pricing-card.reveal.active:nth-child(1) .pricing-card-inner { animation-delay: 0.15s; }
+.pricing-card.reveal.active:nth-child(2) .pricing-card-inner { animation-delay: 0.05s; }
+.pricing-card.reveal.active:nth-child(3) .pricing-card-inner { animation-delay: 0.25s; }
 
 /* Featured badge */
 .pricing-card-badge {

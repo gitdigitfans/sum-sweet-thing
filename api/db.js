@@ -72,16 +72,6 @@ const seedData = {
       },
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString()
-    },
-    {
-      id: 5,
-      name: 'بطاقة ائتمان / مدى',
-      type: 'card',
-      is_active: 0,
-      sort_order: 5,
-      settings: { description: 'قريباً - الدفع عبر بطاقات الائتمان.' },
-      created_at: new Date().toISOString(),
-      updated_at: new Date().toISOString()
     }
   ]
 };

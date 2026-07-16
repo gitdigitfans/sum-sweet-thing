@@ -1095,11 +1095,12 @@ body {
 }
 
 @media (max-width: 600px) {
-  .results-marquee { max-width: 100%; height: 520px; gap: 0.75rem; padding: 0 0.5rem; }
+  .results-marquee { grid-template-columns: 1fr; max-width: 100%; height: 520px; gap: 0.75rem; padding: 0 0.5rem; }
+  .results-column--down { display: none; }
   .results-track { gap: 0.75rem; }
   .results-card { border-radius: 20px; }
-  .results-column--up .results-track { animation-duration: 50s; }
-  .results-column--down .results-track { animation-duration: 50s; }
+  .results-column--up .results-track { animation-duration: 60s; }
+  .results-column--down .results-track { animation-duration: 60s; }
 
   .lightbox-img-wrap { max-width: 96vw; max-height: 82svh; }
   .lightbox-img-wrap img { max-height: 82svh; border-radius: 12px; }

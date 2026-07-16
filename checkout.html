@@ -181,6 +181,25 @@ function renderMethods() {
       bankHtml += '</div>';
     }
 
+    let walletHtml = '';
+    if (m.type === 'wallet' || m.type === 'instapay') {
+      walletHtml = '<div class="bank-details">' +
+        '<h4>' + (m.type === 'instapay' ? 'بيانات InstaPay' : (s.provider || 'المحفظة الإلكترونية') + ' - بيانات التحويل') + '</h4>';
+      if (s.account_holder_ar) {
+        walletHtml += '<div class="detail-row"><span class="detail-label">اسم صاحب الحساب</span><span class="detail-value ar">' + s.account_holder_ar + '</span></div>';
+      }
+      if (s.phone_number) {
+        walletHtml += '<div class="detail-row"><span class="detail-label">رقم المحفظة</span><span class="detail-value">' + s.phone_number + '</span></div>';
+      }
+      if (s.instapay_handle) {
+        walletHtml += '<div class="detail-row"><span class="detail-label">InstaPay Handle</span><span class="detail-value">' + s.instapay_handle + '</span></div>';
+      }
+      if (s.instructions) {
+        walletHtml += '<div class="instructions-box">' + s.instructions + '</div>';
+      }
+      walletHtml += '</div>';
+    }
+
     return '<div class="payment-method-card" data-id="' + m.id + '" onclick="selectMethod(' + m.id + ')">' +
       '<div class="method-header">' +
         '<div class="radio-circle"></div>' +
@@ -190,7 +209,7 @@ function renderMethods() {
           '<div class="method-type-label">' + getTypeLabel(m.type) + '</div>' +
         '</div>' +
       '</div>' +
-      bankHtml +
+      bankHtml + walletHtml +
     '</div>';
   }).join('');
 }

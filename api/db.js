@@ -45,11 +45,41 @@ const seedData = {
     },
     {
       id: 3,
-      name: 'محفظة إلكترونية',
+      name: 'فودافون كاش',
       type: 'wallet',
-      is_active: 0,
+      is_active: 1,
       sort_order: 3,
-      settings: { description: 'الدفع عبر المحافظ الإلكترونية (فودافون كاش، أورانج كاش، إتصالات كاش).' },
+      settings: {
+        provider: 'Vodafone Cash',
+        phone_number: '01012345678',
+        account_holder_ar: 'أحمد كمال أحمد معوض',
+        instructions: 'حوّل المبلغ على رقم المحفظة أعلاه ثم ابعت صورة إثبات التحويل على واتساب لتفعيل اشتراكك.'
+      },
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString()
+    },
+    {
+      id: 4,
+      name: 'انستا باي - InstaPay',
+      type: 'instapay',
+      is_active: 1,
+      sort_order: 4,
+      settings: {
+        instapay_handle: 'ahmedkamal@instapay',
+        phone_number: '01012345678',
+        account_holder_ar: 'أحمد كمال أحمد معوض',
+        instructions: 'حوّل المبلغ عن طريق تطبيق InstaPay على المُعرّف أعلاه ثم ابعت لقطة شاشة للتحويل على واتساب.'
+      },
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString()
+    },
+    {
+      id: 5,
+      name: 'بطاقة ائتمان / مدى',
+      type: 'card',
+      is_active: 0,
+      sort_order: 5,
+      settings: { description: 'قريباً - الدفع عبر بطاقات الائتمان.' },
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString()
     }

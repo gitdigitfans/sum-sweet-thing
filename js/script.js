@@ -246,27 +246,66 @@ function initFaqAccordion() {
   });
 }
 
-// ─── Pricing Carousel Dots (Mobile) ───
+// ─── Pricing Coverflow Carousel ───
 function initPricingDots() {
   const scroll = document.getElementById('pricingCardsScroll');
-  const dots = document.querySelectorAll('.pricing-dot');
-  if (!scroll || !dots.length) return;
+  if (!scroll) return;
+  const cards = Array.from(scroll.querySelectorAll('.pricing-card'));
+  const dots  = Array.from(document.querySelectorAll('.pricing-dot'));
+  const prev  = document.getElementById('pricingArrowPrev');
+  const next  = document.getElementById('pricingArrowNext');
+  if (!cards.length) return;
 
-  function updateDots() {
-    const scrollLeft = scroll.scrollLeft;
-    const cardWidth = scroll.querySelector('.pricing-card')?.offsetWidth || 290;
-    const index = Math.round(scrollLeft / (cardWidth + 24));
-    dots.forEach((d, i) => d.classList.toggle('active', i === Math.min(index, dots.length - 1)));
+  // Start with the featured (middle) card centered
+  let center = cards.findIndex(c => c.classList.contains('pricing-card--featured'));
+  if (center < 0) center = Math.floor(cards.length / 2);
+
+  const n = cards.length;
+  function apply() {
+    cards.forEach((c, i) => {
+      const rel = ((i - center) % n + n) % n; // 0 center, 1 next(right), n-1 prev(left)
+      let pos = 'center';
+      if (rel === 1) pos = 'right';
+      else if (rel === n - 1) pos = 'left';
+      else if (rel !== 0) pos = 'hidden';
+      c.dataset.position = pos;
+    });
+    dots.forEach((d, i) => d.classList.toggle('active', i === center));
   }
 
-  scroll.addEventListener('scroll', updateDots, { passive: true });
-  dots.forEach((dot, i) => {
-    dot.addEventListener('click', () => {
-      const cardWidth = scroll.querySelector('.pricing-card')?.offsetWidth || 290;
-      scroll.scrollTo({ left: i * (cardWidth + 24), behavior: 'smooth' });
+  function go(delta) {
+    center = ((center + delta) % n + n) % n;
+    apply();
+  }
+
+  cards.forEach((card, i) => {
+    card.addEventListener('click', () => {
+      if (i === center) return;
+      center = i;
+      apply();
     });
   });
+
+  prev && prev.addEventListener('click', () => go(-1));
+  next && next.addEventListener('click', () => go(1));
+  dots.forEach((d, i) => d.addEventListener('click', () => { center = i; apply(); }));
+
+  // Auto-rotate gently
+  let auto = setInterval(() => go(1), 6000);
+  scroll.addEventListener('mouseenter', () => clearInterval(auto));
+  scroll.addEventListener('mouseleave', () => { auto = setInterval(() => go(1), 6000); });
+
+  // Keyboard
+  document.addEventListener('keydown', (e) => {
+    const rect = scroll.getBoundingClientRect();
+    if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+    if (e.key === 'ArrowLeft') go(1);   // RTL: left arrow => next
+    if (e.key === 'ArrowRight') go(-1);
+  });
+
+  apply();
 }
+
 
 function initHeroVideo() {
   const video = document.querySelector('.hero-video');

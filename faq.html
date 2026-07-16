@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الأسئلة الشائعة | Iron Trainer</title>
+  <meta name="description" content="الأسئلة الشائعة عن برنامج Iron Trainer - تعرف على كل التفاصيل حول التدريب والتغذية والمتابعة">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='25' y='10' width='50' height='80' rx='8' fill='%23CC0000'/%3E%3Ctext x='50' y='72' font-size='50' text-anchor='middle' fill='white' font-weight='900'%3EI%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+  <div class="noise-overlay"></div>
+  <div class="grain"></div>
+
+  <!-- ═══ Navbar ═══ -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo.png" alt="Iron Trainer" style="height:36px;width:auto">
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="index.html#mentor">الخبرة</a></li>
+        <li><a href="index.html#results">النتائج</a></li>
+        <li><a href="index.html#pricing">الباقات</a></li>
+        <li><a href="faq.html" style="color:var(--red)">الأسئلة الشائعة</a></li>
+        <li><a href="gold-challenge.html">تحدي الذهب</a></li>
+        <li><a href="index.html#pricing" class="nav-cta">ابدأ رحلتك</a></li>
+      </ul>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="القائمة">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══ FAQ Hero ═══ -->
+  <section class="faq-hero">
+    <div class="container" style="text-align:center">
+      <div class="section-label">الأسئلة الشائعة</div>
+      <div class="section-divider" style="margin:0 auto 1.5rem"></div>
+      <h1 class="faq-hero-title">عندك سؤال؟ <span style="color:var(--red)">إحنا عندنا الإجابة</span></h1>
+      <p class="faq-hero-subtitle">تجمعنا هنا أهم الأسئلة اللي بتيجي لعملائنا واللي ممكن تساعدك تاخذ قرارك</p>
+    </div>
+  </section>
+
+  <!-- ═══ FAQ Accordion ═══ -->
+  <section class="faq-section">
+    <div class="container" style="max-width:800px">
+
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          <span>هل البرنامج مناسب للمبتدئين؟</span>
+          <span class="faq-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer">
+          <p>نعم، البرنامج مناسب للمبتدئين والمحترفين، ويتم تصميم الخطة حسب مستواك الحالي وأهدافك.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          <span>هل لازم أكون مشترك في جيم؟</span>
+          <span class="faq-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer">
+          <p>لا، تقدر تختار برنامج للجيم أو برنامج للتمرين في المنزل حسب الإمكانيات المتاحة عندك.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          <span>هل النظام الغذائي بيكون مخصص ليا؟</span>
+          <span class="faq-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer">
+          <p>نعم، يتم إعداد نظام غذائي يناسب هدفك (زيادة عضلات، خسارة دهون، أو تحسين اللياقة) مع مراعاة نمط حياتك.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          <span>هل أقدر أكل الأكلات العادية؟</span>
+          <span class="faq-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer">
+          <p>أكيد، النظام الغذائي مرن ويعتمد على أكلات متوفرة في حياتك اليومية بدون تعقيد.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          <span>مدة البرنامج كام؟</span>
+          <span class="faq-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer">
+          <p>مدة الاشتراك تختلف حسب الباقة، وغالبًا تبدأ من شهر مع إمكانية التجديد.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          <span>هل فيه متابعة؟</span>
+          <span class="faq-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer">
+          <p>نعم، فيه متابعة مستمرة لمستوى التقدم، وتعديل البرنامج عند الحاجة لضمان أفضل النتائج.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          <span>إزاي بتتابعوا التقدم؟</span>
+          <span class="faq-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer">
+          <p>عن طريق صور القياسات، الوزن، ومتابعة الأداء داخل التطبيق أو عبر واتساب.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          <span>هل البرنامج مناسب للرجال والنساء؟</span>
+          <span class="faq-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer">
+          <p>نعم، يتم تصميم خطة تدريب وتغذية تناسب كل شخص حسب هدفه.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          <span>لو عندي إصابة أو مشكلة صحية؟</span>
+          <span class="faq-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer">
+          <p>يتم أخذ حالتك الصحية في الاعتبار، وقد يتم تعديل التمارين أو طلب استشارة الطبيب إذا لزم الأمر.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          <span>هل البرنامج يشمل مكملات غذائية؟</span>
+          <span class="faq-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer">
+          <p>لا يشترط استخدام المكملات، ويمكن تحقيق نتائج ممتازة بالأكل الطبيعي، وإذا احتجت مكملات سيتم ترشيح المناسب فقط.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          <span>كام يوم تمرين في الأسبوع؟</span>
+          <span class="faq-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer">
+          <p>يعتمد على مستواك ووقتك، وغالبًا بين 3 إلى 6 أيام أسبوعيًا.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          <span>هل أقدر أتواصل مع الكابتن؟</span>
+          <span class="faq-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer">
+          <p>نعم، يوجد دعم ومتابعة للإجابة على استفساراتك خلال فترة الاشتراك.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          <span>إمتى هبدأ أشوف نتائج؟</span>
+          <span class="faq-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer">
+          <p>يختلف من شخص لآخر، لكن مع الالتزام يبدأ أغلب المشتركين بملاحظة نتائج خلال 4 إلى 8 أسابيع.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          <span>هل البرنامج بيتغير مع الوقت؟</span>
+          <span class="faq-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer">
+          <p>نعم، يتم تحديث التمارين والنظام الغذائي بشكل دوري حسب تطور مستواك.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          <span>إيه اللي هيحصّل عليه بعد الاشتراك؟</span>
+          <span class="faq-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </span>
+        </button>
+        <div class="faq-answer">
+          <ul class="faq-checklist">
+            <li>برنامج تدريب مخصص</li>
+            <li>نظام غذائي مناسب</li>
+            <li>متابعة دورية</li>
+            <li>تعديل مستمر للخطة</li>
+            <li>دعم للإجابة على الاستفسارات</li>
+            <li>متابعة للوزن والقياسات</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ CTA ═══ -->
+  <section class="faq-cta">
+    <div class="container" style="text-align:center">
+      <h2>متردد؟ <span style="color:var(--red)">ابدأ بـ 15 دقيقة معاك</span></h2>
+      <p style="color:var(--text-body);margin:1rem auto 2rem;max-width:500px">تواصل معانا وهنفهمك كل تفاصيل البرنامج ونساعدك تختار الباقة المناسبة</p>
+      <a href="index.html#contact" class="btn btn-red">تواصل معانا</a>
+    </div>
+  </section>
+
+  <!-- ═══ Footer ═══ -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="Iron Trainer" style="max-width:140px;height:auto;margin-bottom:1rem">
+        <p>أول منظومة تدريبية أونلاين تدمج بين علم النفس الرياضي والتدريب التخصصي والتأهيل الطبي. مش مجرد جيم، ده أسلوب حياة.</p>
+      </div>
+      <div>
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="index.html#mentor">عن المدرب</a></li>
+          <li><a href="index.html#pain">لماذا نحن</a></li>
+          <li><a href="index.html#results">النتائج</a></li>
+          <li><a href="index.html#pricing">الباقات</a></li>
+          <li><a href="faq.html">الأسئلة الشائعة</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>التحديات</h4>
+        <ul>
+          <li><a href="gold-challenge.html">تحدي الذهب</a></li>
+          <li><a href="gold-challenge.html">شروط التحدي</a></li>
+          <li><a href="gold-challenge.html">الاشتراك في التحدي</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>تواصل معنا</h4>
+        <ul>
+          <li><a href="mailto:info@theirontrainer.com">info@theirontrainer.com</a></li>
+          <li><a href="https://www.tiktok.com/@the.iron.trainer" target="_blank" rel="noopener">TikTok</a></li>
+          <li><a href="https://www.facebook.com/share/1D7w55NYVR/" target="_blank" rel="noopener">فيس بوك</a></li>
+          <li><a href="https://www.instagram.com/theirontrainers" target="_blank" rel="noopener">إنستغرام</a></li>
+          <li><a href="https://youtube.com/@theirontrainer" target="_blank" rel="noopener">يوتيوب</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Iron Trainer. جميع الحقوق محفوظة.</span>
+      <div class="footer-social">
+        <a href="https://www.tiktok.com/@the.iron.trainer" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.51a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.48v-7.21a8.16 8.16 0 005.58 2.18v-3.45a4.85 4.85 0 01-3.77-1.59V6.69h3.77z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/share/1D7w55NYVR/" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://youtube.com/@theirontrainer" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/theirontrainers" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

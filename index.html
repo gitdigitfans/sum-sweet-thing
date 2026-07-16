@@ -1,0 +1,636 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iron Trainer | الحديد عنواني</title>
+  <meta name="description" content="أول منظومة تدريبية أونلاين تدمج بين علم النفس الرياضي والتدريب الرياضي التخصصي والتأهيل الطبي">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='25' y='10' width='50' height='80' rx='8' fill='%23CC0000'/%3E%3Ctext x='50' y='72' font-size='50' text-anchor='middle' fill='white' font-weight='900'%3EI%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+  <div class="noise-overlay"></div>
+  <div class="grain"></div>
+  <div class="bg-grid"></div>
+
+  <!-- ═══ Navbar ═══ -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/logo.png" alt="Iron Trainer" style="height:48px;width:auto">
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">الرئيسية</a></li>
+        <li><a href="#mentor">الخبرة</a></li>
+        <li><a href="#pain">لماذا نحن</a></li>
+        <li><a href="#results">النتائج</a></li>
+        <li><a href="#pricing">الباقات</a></li>
+        <li><a href="faq.html">الأسئلة الشائعة</a></li>
+        <li><a href="gold-challenge.html">تحدي الذهب</a></li>
+        <li><a href="#pricing" class="nav-cta">ابدأ رحلتك</a></li>
+      </ul>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="القائمة">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══ Hero ═══ -->
+  <section class="hero" id="home">
+    <div class="hero-video-bg">
+      <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/p1.webp" src="assets/P1.mp4"></video>
+      <img class="hero-poster-fallback" src="assets/p1.webp" alt="" aria-hidden="true">
+    </div>
+    <div class="hero-deco hero-deco-1"></div>
+    <div class="hero-deco hero-deco-2"></div>
+
+    <div class="hero-content">
+
+      <h1 class="hero-title">
+        هدفنا مش الفورمة المثالية،<br>
+        <span class="highlight">هدفنا نبني عقلية حديد،</span>
+        <span class="highlight-block">عشان بدل ما تعملها مرة واحدة، تقدر تعملها ألف مرة.</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        أول منظومة تدريبية أونلاين تدمج بين علم النفس الرياضي والتدريب الرياضي التخصصي والتأهيل الطبي. تابع تمرينك وأوزانك من خلال تطبيق ذكي مع فريق متخصص يتابعك على الواتساب، يعني الجيم في جيبك.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#results" class="btn btn-glass-red"><span class="btn-glass-text">ابدأ رحلة التغيير وابنِ عقليتك الآن</span></a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="number"><span class="counter" data-target="15">0</span>+</div>
+          <div class="label">سنة خبرة</div>
+        </div>
+        <div class="hero-stat">
+          <div class="number"><span class="counter" data-target="8500">0</span>+</div>
+          <div class="label">عميل متدرب</div>
+        </div>
+        <div class="hero-stat">
+          <div class="number"><span class="counter" data-target="97">0</span>%</div>
+          <div class="label">نسبة التزام</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Mentor Section ═══ -->
+  <section class="section mentor-section" id="mentor">
+    <div class="section-container">
+      <div class="mentor-grid">
+        <div class="mentor-content" style="grid-column:1/-1">
+          <div class="section-label reveal reveal-delay-1">الخبرة</div>
+          <div class="section-divider reveal reveal-delay-1"></div>
+          <h2 class="section-title reveal reveal-delay-2">خبرة حقيقية.. <span style="color:var(--red)">ونتائج مثبتة</span></h2>
+          <div class="exp-accordion reveal reveal-delay-3">
+            <button class="exp-accordion-trigger" onclick="toggleAccordion(this)" aria-expanded="false">
+              <span class="exp-accordion-title-text">اعرف سر الـ 15 سنة خبرة 👇</span>
+              <svg class="exp-accordion-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="exp-accordion-body">
+              <div class="mentor-quote">
+                15 سنة من العمل الميداني داخل الصالات الرياضية ومتابعة آلاف المتدربين بمختلف أهدافهم وتحدياتهم. خلال السنوات دي طورنا نظام متكامل يجمع بين التدريب الرياضي، وعلم النفس الرياضي، والتأهيل البدني، علشان نوفر تجربة متابعة احترافية تساعدك تستمر وتحقق نتائج تدوم.
+              </div>
+              <p class="section-desc" style="max-width:100%;margin-bottom:0">
+                15 سنة خبرة على الأرض.. عشناها جوه الصالات وشاركنا في تغيير حياة الآلاف. النهارده بننقل السيستم ده للأونلاين اللي بيجمع بين العلم، التكنولوجيا، والمتابعة اللحظية.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Pain Point Section ═══ -->
+  <section class="section pain-section" id="pain">
+    <div class="section-container">
+      <div style="text-align:center;margin-bottom:3rem">
+        <div class="section-label reveal">نقطة الفرق</div>
+        <div class="section-divider reveal" style="margin:0 auto 1.5rem"></div>
+        <h2 class="section-title reveal" style="max-width:700px;margin:0 auto">
+          ليه برامج الأونلاين مش بلتزم بيها؟
+        </h2>
+        <p class="section-desc reveal reveal-delay-1" style="max-width:600px;margin:1rem auto 0">
+          لأن أول ما تضغطك الظروف أو يقل حماسك، بتوقف. أغلب البرامج بتديك خطة تدريب أو نظام غذائي وخلاص. في Iron Trainer إحنا مش بنقدم مسكنات مؤقتة، إحنا بنشتغل على السبب الحقيقي للاستمرار: عقلك.
+        </p>
+      </div>
+
+      <div class="pain-grid">
+        <div class="pain-visual reveal">
+          <img src="assets/p3.png" alt="نحن نفهمك" style="width:100%;max-width:440px;height:auto;border-radius:20px;display:block">
+        </div>
+        <div class="pain-points">
+          <div class="pain-item reveal reveal-delay-1">
+            <div class="pain-item-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 00-7 7c0 2.4 1.2 4.5 3 5.7V17a1 1 0 001 1h6a1 1 0 001-1v-2.3c1.8-1.2 3-3.3 3-5.7a7 7 0 00-7-7z"/><path d="M9 21h6"/><path d="M12 17v4"/></svg></div>
+            <div>
+              <h4>علم النفس الرياضي</h4>
+              <p>بنغيّر طريقة تفكيرك وسلوكك اليومي عشان الالتزام يبقى عادة، مش مجهود مؤقت.</p>
+            </div>
+          </div>
+          <div class="pain-item reveal reveal-delay-2">
+            <div class="pain-item-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 113 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+            <div>
+              <h4>برامج مخصصة ليك</h4>
+              <p>البرامج مصممة حسب احتياجاتك ووقتك وظروفك مش نسخ ولصق من برامج ناس تانية.</p>
+            </div>
+          </div>
+          <div class="pain-item reveal reveal-delay-3">
+            <div class="pain-item-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg></div>
+            <div>
+              <h4>تكنولوجيا ومتابعة لحظية</h4>
+              <p>أبلكيشن ذكي وجروب واتساب خاص بيك مع الفريق كله متواجد معاك في أي وقت.</p>
+            </div>
+          </div>
+          <div class="pain-item reveal reveal-delay-4">
+            <div class="pain-item-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+            <div>
+              <h4>تأهيل طبي واستشفاء</h4>
+              <p>مع دكتور العلاج الطبيعي عشان الوقاية من الإصابات والاستشفاء العضلي السليم.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Social Proof ═══ -->
+  <section class="section social-proof" id="results">
+    <div class="section-container">
+      <div style="text-align:center;margin-bottom:2rem">
+        <div class="section-label reveal">نتائج حقيقية</div>
+        <div class="section-divider reveal" style="margin:0 auto 1.5rem"></div>
+        <h2 class="section-title reveal" style="max-width:750px;margin:0 auto">
+          نتائج حقيقية.. لأشخاص أرادوا تغيير نمط حياتهم <span style="color:var(--red)">مش جسمهم بس</span>
+        </h2>
+        <p class="section-desc reveal reveal-delay-1" style="max-width:600px;margin:1rem auto 0">
+          كل قصة نجاح هنا مش مجرد تغيير في الشكل، لكنها رحلة لبناء عادات جديدة وعقلية أقوى وأسلوب حياة مستدام.
+        </p>
+      </div>
+
+      <div class="results-grid">
+        <div class="results-card reveal" data-index="0">
+          <img src="assets/iimg/1.jpeg" alt="نتيجة حقيقية 1" loading="eager">
+          <div class="results-overlay"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="results-card reveal reveal-delay-1" data-index="1">
+          <img src="assets/iimg/2.jpeg" alt="نتيجة حقيقية 2" loading="lazy">
+          <div class="results-overlay"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="results-card reveal reveal-delay-2" data-index="2">
+          <img src="assets/iimg/3.jpeg" alt="نتيجة حقيقية 3" loading="lazy">
+          <div class="results-overlay"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="results-card reveal" data-index="3">
+          <img src="assets/iimg/4.jpeg" alt="نتيجة حقيقية 4" loading="lazy">
+          <div class="results-overlay"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="results-card reveal reveal-delay-1" data-index="4">
+          <img src="assets/iimg/5.jpeg" alt="نتيجة حقيقية 5" loading="lazy">
+          <div class="results-overlay"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="results-card reveal reveal-delay-2" data-index="5">
+          <img src="assets/iimg/6.jpeg" alt="نتيجة حقيقية 6" loading="lazy">
+          <div class="results-overlay"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="results-card reveal" data-index="6">
+          <img src="assets/iimg/7.jpeg" alt="نتيجة حقيقية 7" loading="lazy">
+          <div class="results-overlay"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="results-card reveal reveal-delay-1" data-index="7">
+          <img src="assets/iimg/8.jpeg" alt="نتيجة حقيقية 8" loading="lazy">
+          <div class="results-overlay"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="results-card reveal reveal-delay-2" data-index="8">
+          <img src="assets/iimg/9.jpeg" alt="نتيجة حقيقية 9" loading="lazy">
+          <div class="results-overlay"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="results-card reveal" data-index="9">
+          <img src="assets/iimg/10.jpeg" alt="نتيجة حقيقية 10" loading="lazy">
+          <div class="results-overlay"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="results-card reveal reveal-delay-1" data-index="10">
+          <img src="assets/iimg/11.jpeg" alt="نتيجة حقيقية 11" loading="lazy">
+          <div class="results-overlay"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="results-card reveal reveal-delay-2" data-index="11">
+          <img src="assets/iimg/12.jpeg" alt="نتيجة حقيقية 12" loading="lazy">
+          <div class="results-overlay"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="results-card reveal" data-index="12">
+          <img src="assets/iimg/13.jpeg" alt="نتيجة حقيقية 13" loading="lazy">
+          <div class="results-overlay"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+      </div>
+
+      <p class="section-desc reveal reveal-delay-1" style="text-align:center;max-width:600px;margin:2rem auto 0">
+        التحول الحقيقي مش بس خسارة وزن أو بناء عضلات.
+      </p>
+      <p class="section-desc reveal reveal-delay-1" style="text-align:center;max-width:600px;margin:0.5rem auto 0">
+        ممكن يكون علاج إصابة، بناء التزام دائم، تحسين العلاقة مع الأكل، التخلص من الأكل العاطفي، أو اكتساب ثقة جديدة بالنفس.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══ Journey Section ═══ -->
+  <section class="section journey-section" id="journey">
+    <div class="section-container">
+      <div style="text-align:center;margin-bottom:2rem">
+        <div class="section-label reveal">رحلتك معانا</div>
+        <div class="section-divider reveal" style="margin:0 auto 1.5rem"></div>
+        <h2 class="section-title reveal" style="max-width:600px;margin:0 auto">
+          رحلة الاشتراك <span style="color:var(--red)">خطوة بخطوة</span>
+        </h2>
+      </div>
+
+      <div class="timeline-wrapper">
+        <div class="timeline-track">
+          <div class="timeline-line"></div>
+          <div class="timeline-line-fill"></div>
+        </div>
+        <div class="timeline-items">
+
+          <div class="timeline-item timeline-above reveal">
+            <div class="timeline-card">
+              <h4>اختر باقتك</h4>
+              <p>اختر الباقة المناسبة لك من خطط الأسعار واشترك من خلال الموقع</p>
+            </div>
+            <div class="timeline-connector"></div>
+            <div class="timeline-node">
+              <div class="timeline-circle">
+                <span class="step-num">1</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item timeline-below reveal">
+            <div class="timeline-node">
+              <div class="timeline-circle">
+                <span class="step-num">2</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+              </div>
+            </div>
+            <div class="timeline-connector"></div>
+            <div class="timeline-card">
+              <h4>التواصل والتفعيل</h4>
+              <p>خدمة العملاء هتتواصل معاك وتفعل الاشتراك علي الأبلكيشن</p>
+            </div>
+          </div>
+
+          <div class="timeline-item timeline-above reveal">
+            <div class="timeline-card">
+              <h4>استلم برامجك</h4>
+              <p>هتستلم البرامج المخصصة ليك حسب احتياجاتك ووقتك</p>
+            </div>
+            <div class="timeline-connector"></div>
+            <div class="timeline-node">
+              <div class="timeline-circle">
+                <span class="step-num">3</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/></svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item timeline-below reveal">
+            <div class="timeline-node">
+              <div class="timeline-circle">
+                <span class="step-num">4</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+              </div>
+            </div>
+            <div class="timeline-connector"></div>
+            <div class="timeline-card">
+              <h4>جروب واتساب خاص</h4>
+              <p>انشاء جروب واتساب خاص بيك عليك التيم كامل معاك في اي وقت</p>
+            </div>
+          </div>
+
+          <div class="timeline-item timeline-above reveal">
+            <div class="timeline-card">
+              <h4>خطوة بخطوة للهدف</h4>
+              <p>معاك خطوه بخطوه عشان توصل لهدفك وحياة صحية أفضل تستحقها</p>
+            </div>
+            <div class="timeline-connector"></div>
+            <div class="timeline-node">
+              <div class="timeline-circle">
+                <span class="step-num">5</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 00-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 012-3.95A12.88 12.88 0 0122 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 01-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ Pricing Section ═══ -->
+  <section class="section pricing-section" id="pricing">
+    <div class="section-container">
+      <div style="text-align:center;margin-bottom:2rem">
+        <div class="section-label reveal">الخطط والأسعار</div>
+        <div class="section-divider reveal" style="margin:0 auto 1.5rem"></div>
+        <h2 class="section-title reveal" style="max-width:600px;margin:0 auto">
+          اختر الباقة اللي <span style="color:var(--red)">تناسبك</span>
+        </h2>
+      </div>
+
+      <div class="pricing-cards-wrap">
+        <div class="pricing-cards-scroll" id="pricingCardsScroll">
+
+          <div class="pricing-card reveal">
+            <div class="pricing-card-badge"></div>
+            <div class="pricing-card-inner">
+              <h3 class="pricing-plan-name">باقة البداية</h3>
+              <span class="pricing-plan-duration">3 شهور</span>
+              <div class="pricing-price-block">
+                <span class="pricing-price">1,500</span>
+                <span class="pricing-currency">ج.م</span>
+              </div>
+              <div class="pricing-divider"></div>
+              <ul class="pricing-features">
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>خطة تدريب تناسب وقتك وحياتك</span></li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>التغذية المرنة المحسوبة</span></li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>الأبلكيشن التكنولوجي الذكي Iron App</span></li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>المتابعة الفردية (جروب واتساب)</span></li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>جلسة كل أسبوعين مع أخصائي علم النفس</span></li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>متابعة شهرية فيديو كول</span></li>
+              </ul>
+              <a href="/checkout" class="btn btn-primary pricing-btn">اشترك الآن</a>
+            </div>
+          </div>
+
+          <div class="pricing-card pricing-card--featured reveal">
+            <div class="pricing-card-badge">⭐ الأكثر اختيارًا</div>
+            <div class="pricing-card-inner">
+              <h3 class="pricing-plan-name">الباقة المتقدمة</h3>
+              <span class="pricing-plan-duration">6 شهور</span>
+              <div class="pricing-price-block">
+                <span class="pricing-price">2,500</span>
+                <span class="pricing-currency">ج.م</span>
+              </div>
+              <div class="pricing-divider"></div>
+              <ul class="pricing-features">
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>خطة تدريب تناسب وقتك وحياتك</span></li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>التغذية المرنة المحسوبة</span></li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>الأبلكيشن التكنولوجي الذكي Iron App</span></li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>المتابعة الفردية (جروب واتساب خاص)</span></li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>جلسة كل أسبوعين مع أخصائي علم النفس</span></li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>الاستشفاء والوقاية مع دكتور العلاج الطبيعي</span></li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>متابعة أسبوعية فيديو كول مع المدرب</span></li>
+              </ul>
+              <a href="/checkout" class="btn btn-primary pricing-btn">اشترك الآن</a>
+            </div>
+          </div>
+
+          <div class="pricing-card reveal">
+            <div class="pricing-card-badge"></div>
+            <div class="pricing-card-inner">
+              <h3 class="pricing-plan-name">الباقة الشاملة</h3>
+              <span class="pricing-plan-duration">12 شهر</span>
+              <div class="pricing-price-block">
+                <span class="pricing-price">3,999</span>
+                <span class="pricing-currency">ج.م</span>
+              </div>
+              <div class="pricing-divider"></div>
+              <ul class="pricing-features">
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>خطة تدريب تناسب وقتك وحياتك</span></li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>التغذية المرنة المحسوبة</span></li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>الأبلكيشن التكنولوجي الذكي Iron App</span></li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>المتابعة الفردية (جروب واتساب خاص)</span></li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>جلسة كل أسبوعين مع أخصائي علم النفس</span></li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>الاستشفاء والوقاية مع دكتور العلاج الطبيعي</span></li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>متابعة أسبوعية فيديو كول مع المدرب</span></li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>تحديث البرامج شهرياً حسب التطور</span></li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg><span>خصم 30% على تحدي الذهب</span></li>
+              </ul>
+              <a href="/checkout" class="btn btn-primary pricing-btn">اشترك الآن</a>
+            </div>
+          </div>
+
+        </div>
+        <div class="pricing-dots" id="pricingDots">
+          <button class="pricing-dot active" data-index="0"></button>
+          <button class="pricing-dot" data-index="1"></button>
+          <button class="pricing-dot" data-index="2"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Features Section ═══ -->
+  <section class="section features-section" id="features">
+    <div class="features-bg-shapes">
+      <div class="features-shape features-shape-1"></div>
+      <div class="features-shape features-shape-2"></div>
+      <div class="features-shape features-shape-3"></div>
+    </div>
+    <div class="section-container">
+      <div style="text-align:center;margin-bottom:3.5rem">
+        <div class="section-label reveal">مميزات الاشتراك</div>
+        <div class="section-divider reveal" style="margin:0 auto 1.5rem"></div>
+        <h2 class="section-title reveal" style="max-width:600px;margin:0 auto">
+          كل اللي <span style="color:var(--red)">تحتاجه</span> في باقة واحدة
+        </h2>
+      </div>
+
+      <div class="features-grid">
+
+        <div class="feature-card feature-card--wide reveal reveal-delay-1">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M6.5 6.5h11M6.5 17.5h11M3 12h3.5m7 0H21M6.5 6.5v11M17.5 6.5v11"/></svg>
+          </div>
+          <h4>خطة تدريب تناسب وقتك وحياتك</h4>
+          <p>برنامج تدريبي مصمم خصيصاً حسب جدولك وظروفك، مش برنامج جامد يخليك تختار بين شغلك وتمرينك.</p>
+        </div>
+
+        <div class="feature-card reveal reveal-delay-2">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2c-1.5 0-3 .75-3.75 2C6 5.5 5 8 5 11c0 3.5 2.5 6 5 7.5V22h4v-3.5c2.5-1.5 5-4 5-7.5 0-3-1-5.5-3.25-7C15 2.75 13.5 2 12 2z"/><path d="M9 14c-.8-.6-1.5-1.5-1.5-3 0-1.8 1.2-3.5 2.5-4.5"/><path d="M15 14c.8-.6 1.5-1.5 1.5-3 0-1.8-1.2-3.5-2.5-4.5"/></svg>
+          </div>
+          <h4>التغذية المرنة المحسوبة</h4>
+          <p>نظام غذائي محسوب بدقة لكن مرن يناسب حياتك الاجتماعية ومطبخك، مش رجيم مؤقت.</p>
+        </div>
+
+        <div class="feature-card reveal reveal-delay-3">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M12 18h.01"/></svg>
+          </div>
+          <h4>الأبلكيشن التكنولوجي الذكي Iron App</h4>
+          <p>تطبيق ذكي متكامل لمتابعة تمارينك وأوزانك وتطورك اليومي، كل حاجة في جيبك.</p>
+        </div>
+
+        <div class="feature-card reveal reveal-delay-4">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h4>المتابعة الفردية</h4>
+          <p>جروب واتساب خاص بيك مع الفريق كله - مدربك، أخصائي النفس، ودكتور العلاج الطبيعي - متواجدين معاك يومياً.</p>
+        </div>
+
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 3 1.5 5 3 6.5V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1.5c1.5-1.5 3-3.5 3-6.5a7 7 0 0 0-7-7z"/><path d="M9 21h6"/><path d="M10 2v1"/><path d="M14 2v1"/></svg>
+          </div>
+          <h4>الصلابة النفسية</h4>
+          <p>جلسة كل أسبوعين مع أخصائي علم النفس الرياضي لبناء عقلية حديد تخليك تلتزم وتستمر.</p>
+        </div>
+
+        <div class="feature-card reveal reveal-delay-2">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M19.5 12.5c0 3.6-3 6.5-6.5 6.5s-6.5-2.9-6.5-6.5S9.4 6 13 6c1.2 0 2.3.3 3.3.9"/><path d="M19.5 6v6.5h-6.5"/><path d="M20 12l2-2"/><path d="M12 6V2"/><path d="M9.5 6L8 4"/></svg>
+          </div>
+          <h4>الاستشفاء والوقاية</h4>
+          <p>متابعة مع دكتور العلاج الطبيعي للوقاية من الإصابات والاستشفاء العضلي السليم بعد التمرين.</p>
+        </div>
+
+        <div class="feature-card reveal reveal-delay-3">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/><path d="M9 16l2 2 4-4"/></svg>
+          </div>
+          <h4>متابعة أسبوعية فيديو كول</h4>
+          <p>جلسة فيديو أسبوعية مع مدربك الشخصي لمتابعة الأداء، تعديل التمرين، والإجابة على استفساراتك.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Contact Section ═══ -->
+  <section class="section contact-section" id="contact">
+    <div class="section-container">
+      <div style="text-align:center;margin-bottom:2.5rem">
+        <div class="section-label reveal">تواصل معانا</div>
+        <div class="section-divider reveal" style="margin:0 auto 1.5rem"></div>
+        <h2 class="section-title reveal" style="max-width:600px;margin:0 auto">
+          عايز تبدأ <span style="color:var(--red)">رحلة التغيير</span>؟
+        </h2>
+        <p class="section-desc reveal reveal-delay-1" style="max-width:500px;margin:1rem auto 0">
+          ابعتلنا وهنرد عليك في أقرب وقت
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <form class="contact-form reveal reveal-delay-2" id="contactForm">
+          <input type="text" name="name" placeholder="الاسم الكامل" required>
+          <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+          <input type="tel" name="phone" placeholder="رقم الهاتف" required>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">
+            إرسال
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+          </button>
+          <div class="contact-success" id="contactSuccess">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span>شكراً لتواصلك! هنرد عليك قريب جداً.</span>
+          </div>
+        </form>
+
+        <div class="contact-info">
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <h4>البريد الإلكتروني</h4>
+              <a href="mailto:info@theirontrainer.com">info@theirontrainer.com</a>
+            </div>
+          </div>
+
+          <div class="contact-social-links">
+            <a href="https://www.tiktok.com/@the.iron.trainer" target="_blank" rel="noopener noreferrer" class="contact-social-icon" aria-label="TikTok">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.51a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.48v-7.21a8.16 8.16 0 005.58 2.18v-3.45a4.85 4.85 0 01-3.77-1.59V6.69h3.77z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/share/1D7w55NYVR/" target="_blank" rel="noopener noreferrer" class="contact-social-icon" aria-label="Facebook">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://youtube.com/@theirontrainer" target="_blank" rel="noopener noreferrer" class="contact-social-icon" aria-label="YouTube">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/theirontrainers" target="_blank" rel="noopener noreferrer" class="contact-social-icon" aria-label="Instagram">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Footer ═══ -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="Iron Trainer" style="max-width:140px;height:auto;margin-bottom:1rem">
+        <p>أول منظومة تدريبية أونلاين تدمج بين علم النفس الرياضي والتدريب التخصصي والتأهيل الطبي. مش مجرد جيم، ده أسلوب حياة.</p>
+      </div>
+      <div>
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="#home">الرئيسية</a></li>
+          <li><a href="#mentor">عن المدرب</a></li>
+          <li><a href="#pain">لماذا نحن</a></li>
+          <li><a href="#results">النتائج</a></li>
+          <li><a href="#pricing">الباقات</a></li>
+          <li><a href="faq.html">الأسئلة الشائعة</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>التحديات</h4>
+        <ul>
+          <li><a href="gold-challenge.html">تحدي الذهب</a></li>
+          <li><a href="gold-challenge.html">شروط التحدي</a></li>
+          <li><a href="gold-challenge.html">الاشتراك في التحدي</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>تواصل معنا</h4>
+        <ul>
+          <li><a href="mailto:info@theirontrainer.com">info@theirontrainer.com</a></li>
+          <li><a href="https://www.tiktok.com/@the.iron.trainer" target="_blank" rel="noopener noreferrer">TikTok</a></li>
+          <li><a href="https://www.facebook.com/share/1D7w55NYVR/" target="_blank" rel="noopener noreferrer">فيس بوك</a></li>
+          <li><a href="https://www.instagram.com/theirontrainers" target="_blank" rel="noopener noreferrer">إنستغرام</a></li>
+          <li><a href="https://youtube.com/@theirontrainer" target="_blank" rel="noopener noreferrer">يوتيوب</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Iron Trainer. جميع الحقوق محفوظة.</span>
+      <div class="footer-social">
+        <a href="https://www.tiktok.com/@the.iron.trainer" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.51a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.48v-7.21a8.16 8.16 0 005.58 2.18v-3.45a4.85 4.85 0 01-3.77-1.59V6.69h3.77z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/share/1D7w55NYVR/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://youtube.com/@theirontrainer" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/theirontrainers" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══ Results Lightbox ═══ -->
+  <div class="results-lightbox" id="resultsLightbox">
+    <button class="lightbox-close" aria-label="إغلاق">&times;</button>
+    <button class="lightbox-arrow lightbox-prev" aria-label="السابق">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+    <button class="lightbox-arrow lightbox-next" aria-label="التالي">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <div class="lightbox-img-wrap">
+      <img src="" alt="نتيجة" id="lightboxImg">
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

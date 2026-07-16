@@ -1,0 +1,10 @@
+name = "iron-trainer"
+main = "worker.js"
+compatibility_date = "2025-04-01"
+
+[[kv_namespaces]]
+binding = "IRON_ASSETS"
+id = "5cfce2a14c76406498463e4f875415c8"
+preview_id = "5cfce2a14c76406498463e4f875415c8"
+
+workers_dev = true

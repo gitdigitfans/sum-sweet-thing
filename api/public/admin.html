@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>لوحة التحكم - طرق الدفع | Iron Trainer</title>
+<link rel="stylesheet" href="/api/public/css/admin.css">
+</head>
+<body>
+
+<div class="toast" id="toast"></div>
+
+<div class="admin-layout">
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <img src="/assets/logo.png" alt="Iron Trainer" onerror="this.style.display='none'">
+      <span>Iron Trainer</span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="#" class="active">
+        <span class="nav-icon">&#9881;</span>
+        <span>طرق الدفع</span>
+      </a>
+      <a href="/checkout" target="_blank">
+        <span class="nav-icon">&#8592;</span>
+        <span>متجر الدفع</span>
+      </a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <div class="header-bar">
+      <h1>إدارة طرق الدفع</h1>
+      <div class="header-actions">
+        <button class="btn btn-primary" onclick="openAddModal()">+ إضافة طريقة دفع</button>
+      </div>
+    </div>
+
+    <div class="stats-grid" id="statsGrid">
+      <div class="stat-card">
+        <div class="stat-value" id="totalCount">0</div>
+        <div class="stat-label">إجمالي طرق الدفع</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="activeCount">0</div>
+        <div class="stat-label">طرق مفعلة</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="inactiveCount">0</div>
+        <div class="stat-label">طرق معطلة</div>
+      </div>
+    </div>
+
+    <div class="table-container">
+      <table id="methodsTable">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>اسم طريقة الدفع</th>
+            <th>النوع</th>
+            <th>الحالة</th>
+            <th>تفعيل / تعطيل</th>
+            <th>الإجراءات</th>
+          </tr>
+        </thead>
+        <tbody id="methodsBody">
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+
+<div class="modal-overlay" id="methodModal">
+  <div class="modal">
+    <div class="modal-header">
+      <h2 id="modalTitle">إضافة طريقة دفع</h2>
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+    </div>
+    <form id="methodForm" onsubmit="saveMethod(event)">
+      <input type="hidden" id="methodId">
+      <div class="form-group">
+        <label for="methodName">اسم طريقة الدفع</label>
+        <input type="text" id="methodName" required placeholder="مثال: التحويل البنكي - CIB">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="methodType">نوع الدفع</label>
+          <select id="methodType" onchange="toggleSettingsFields()">
+            <option value="bank_transfer">تحويل بنكي</option>
+            <option value="card">بطاقة ائتمان / مدى</option>
+            <option value="wallet">محفظة إلكترونية</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="methodSort">الترتيب</label>
+          <input type="number" id="methodSort" value="0" min="0">
+        </div>
+      </div>
+
+      <div id="bankSettings" class="settings-group">
+        <h3 style="font-size:0.95rem;font-weight:700;color:var(--gray-700);margin-bottom:0.75rem">بيانات الحساب البنكي</h3>
+        <div class="form-group">
+          <label>اسم البنك</label>
+          <input type="text" id="bankName" placeholder="مثال: CIB مصر">
+        </div>
+        <div class="form-group">
+          <label>اسم الشركة (عربي)</label>
+          <input type="text" id="bankHolderAr" placeholder="الاسم بالعربي">
+        </div>
+        <div class="form-group">
+          <label>اسم الشركة (إنجليزي)</label>
+          <input type="text" id="bankHolderEn" placeholder="الاسم بالإنجليزية">
+        </div>
+
+        <h4 style="font-size:0.85rem;font-weight:700;color:var(--gray-500);margin:1rem 0 0.5rem">حساب الجنيه المصري (EGP)</h4>
+        <div class="form-row">
+          <div class="form-group">
+            <label>رقم الحساب</label>
+            <input type="text" id="egpAccount" placeholder="رقم الحساب">
+          </div>
+          <div class="form-group">
+            <label>IBAN</label>
+            <input type="text" id="egpIban" placeholder="IBAN">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>ملاحظة (EGP)</label>
+          <input type="text" id="egpNote" placeholder="ملاحظة لحساب الجنيه">
+        </div>
+
+        <h4 style="font-size:0.85rem;font-weight:700;color:var(--gray-500);margin:1rem 0 0.5rem">حساب الدولار الأمريكي (USD)</h4>
+        <div class="form-row">
+          <div class="form-group">
+            <label>رقم الحساب</label>
+            <input type="text" id="usdAccount" placeholder="رقم الحساب">
+          </div>
+          <div class="form-group">
+            <label>IBAN</label>
+            <input type="text" id="usdIban" placeholder="IBAN">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>ملاحظة (USD)</label>
+          <input type="text" id="usdNote" placeholder="ملاحظة لحساب الدولار">
+        </div>
+
+        <div class="form-group">
+          <label>Swift Code</label>
+          <input type="text" id="swiftCode" placeholder="مثال: CIBEEGCX141">
+        </div>
+        <div class="form-group">
+          <label>تعليمات التحويل</label>
+          <textarea id="transferInstructions" placeholder="تعليمات تظهر للعميل بعد التحويل"></textarea>
+        </div>
+      </div>
+
+      <div id="simpleSettings" class="settings-group" style="display:none">
+        <div class="form-group">
+          <label>وصف طريقة الدفع</label>
+          <textarea id="simpleDesc" placeholder="وصف قصير لطريقة الدفع"></textarea>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="button" class="btn btn-outline" onclick="closeModal()">إلغاء</button>
+        <button type="submit" class="btn btn-primary" id="saveBtn">حفظ</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+const API = '/api/payment-methods';
+
+function showToast(msg, type) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast toast-' + type + ' show';
+  clearTimeout(t._hide);
+  t._hide = setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+function toggleSettingsFields() {
+  const type = document.getElementById('methodType').value;
+  document.getElementById('bankSettings').style.display = type === 'bank_transfer' ? 'block' : 'none';
+  document.getElementById('simpleSettings').style.display = type !== 'bank_transfer' ? 'block' : 'none';
+}
+
+async function loadMethods() {
+  try {
+    const res = await fetch(API);
+    const json = await res.json();
+    if (!json.success) throw new Error(json.message);
+    renderTable(json.data);
+    renderStats(json.data);
+  } catch (err) {
+    showToast('خطأ في تحميل طرق الدفع: ' + err.message, 'error');
+  }
+}
+
+function renderStats(methods) {
+  document.getElementById('totalCount').textContent = methods.length;
+  document.getElementById('activeCount').textContent = methods.filter(m => m.is_active).length;
+  document.getElementById('inactiveCount').textContent = methods.filter(m => !m.is_active).length;
+}
+
+function renderTable(methods) {
+  const tbody = document.getElementById('methodsBody');
+  const typeLabels = { bank_transfer: 'تحويل بنكي', card: 'بطاقة ائتمان', wallet: 'محفظة إلكترونية' };
+
+  if (methods.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="6"><div class="empty-state"><div class="empty-icon">+</div><h3>لا توجد طرق دفع</h3><p>أضف أول طريقة دفع الآن</p></div></td></tr>';
+    return;
+  }
+
+  tbody.innerHTML = methods.map((m, i) =>
+    '<tr>' +
+      '<td>' + (i + 1) + '</td>' +
+      '<td><strong>' + m.name + '</strong></td>' +
+      '<td><span class="badge badge-type">' + (typeLabels[m.type] || m.type) + '</span></td>' +
+      '<td><span class="badge ' + (m.is_active ? 'badge-active' : 'badge-inactive') + '">' + (m.is_active ? 'مفعلة' : 'معطلة') + '</span></td>' +
+      '<td><label class="toggle"><input type="checkbox" ' + (m.is_active ? 'checked' : '') + ' onchange="toggleMethod(' + m.id + ')"><span class="slider"></span></label></td>' +
+      '<td><div class="action-btns">' +
+        '<button class="btn btn-sm btn-outline" onclick="editMethod(' + m.id + ')">تعديل</button>' +
+        '<button class="btn btn-sm btn-danger" onclick="deleteMethod(' + m.id + ')">حذف</button>' +
+      '</div></td>' +
+    '</tr>'
+  ).join('');
+}
+
+async function toggleMethod(id) {
+  try {
+    const res = await fetch(API + '/' + id + '/toggle', { method: 'PATCH' });
+    const json = await res.json();
+    if (!json.success) throw new Error(json.message);
+    showToast('تم تغيير حالة طريقة الدفع', 'success');
+    loadMethods();
+  } catch (err) {
+    showToast('خطأ: ' + err.message, 'error');
+    loadMethods();
+  }
+}
+
+function openAddModal() {
+  document.getElementById('modalTitle').textContent = 'إضافة طريقة دفع جديدة';
+  document.getElementById('saveBtn').textContent = 'إضافة';
+  document.getElementById('methodForm').reset();
+  document.getElementById('methodId').value = '';
+  document.getElementById('bankSettings').style.display = 'block';
+  document.getElementById('simpleSettings').style.display = 'none';
+  document.getElementById('methodModal').classList.add('open');
+}
+
+function closeModal() {
+  document.getElementById('methodModal').classList.remove('open');
+}
+
+function getSettingsFromForm() {
+  const type = document.getElementById('methodType').value;
+  if (type === 'bank_transfer') {
+    return {
+      bank_name: document.getElementById('bankName').value,
+      account_holder_ar: document.getElementById('bankHolderAr').value,
+      account_holder_en: document.getElementById('bankHolderEn').value,
+      accounts: [
+        {
+          currency: 'EGP',
+          currency_label: 'الجنيه المصري',
+          account_number: document.getElementById('egpAccount').value,
+          iban: document.getElementById('egpIban').value,
+          note: document.getElementById('egpNote').value
+        },
+        {
+          currency: 'USD',
+          currency_label: 'الدولار الأمريكي',
+          account_number: document.getElementById('usdAccount').value,
+          iban: document.getElementById('usdIban').value,
+          note: document.getElementById('usdNote').value
+        }
+      ],
+      swift_code: document.getElementById('swiftCode').value,
+      instructions: document.getElementById('transferInstructions').value
+    };
+  } else {
+    return { description: document.getElementById('simpleDesc').value };
+  }
+}
+
+function fillFormFromMethod(method) {
+  document.getElementById('methodId').value = method.id;
+  document.getElementById('methodName').value = method.name;
+  document.getElementById('methodType').value = method.type;
+  document.getElementById('methodSort').value = method.sort_order || 0;
+  const s = method.settings || {};
+
+  if (method.type === 'bank_transfer') {
+    document.getElementById('bankName').value = s.bank_name || '';
+    document.getElementById('bankHolderAr').value = s.account_holder_ar || '';
+    document.getElementById('bankHolderEn').value = s.account_holder_en || '';
+    const egp = (s.accounts || []).find(a => a.currency === 'EGP') || {};
+    const usd = (s.accounts || []).find(a => a.currency === 'USD') || {};
+    document.getElementById('egpAccount').value = egp.account_number || '';
+    document.getElementById('egpIban').value = egp.iban || '';
+    document.getElementById('egpNote').value = egp.note || '';
+    document.getElementById('usdAccount').value = usd.account_number || '';
+    document.getElementById('usdIban').value = usd.iban || '';
+    document.getElementById('usdNote').value = usd.note || '';
+    document.getElementById('swiftCode').value = s.swift_code || '';
+    document.getElementById('transferInstructions').value = s.instructions || '';
+    document.getElementById('bankSettings').style.display = 'block';
+    document.getElementById('simpleSettings').style.display = 'none';
+  } else {
+    document.getElementById('simpleDesc').value = s.description || '';
+    document.getElementById('bankSettings').style.display = 'none';
+    document.getElementById('simpleSettings').style.display = 'block';
+  }
+}
+
+async function editMethod(id) {
+  try {
+    const res = await fetch(API + '/' + id);
+    const json = await res.json();
+    if (!json.success) throw new Error(json.message);
+    document.getElementById('modalTitle').textContent = 'تعديل طريقة الدفع';
+    document.getElementById('saveBtn').textContent = 'حفظ التغييرات';
+    fillFormFromMethod(json.data);
+    document.getElementById('methodModal').classList.add('open');
+  } catch (err) {
+    showToast('خطأ: ' + err.message, 'error');
+  }
+}
+
+async function saveMethod(e) {
+  e.preventDefault();
+  const id = document.getElementById('methodId').value;
+  const data = {
+    name: document.getElementById('methodName').value,
+    type: document.getElementById('methodType').value,
+    sort_order: parseInt(document.getElementById('methodSort').value) || 0,
+    settings: getSettingsFromForm()
+  };
+
+  try {
+    const url = id ? (API + '/' + id) : API;
+    const method = id ? 'PUT' : 'POST';
+    const res = await fetch(url, {
+      method,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    const json = await res.json();
+    if (!json.success) throw new Error(json.message);
+    showToast(id ? 'تم تحديث طريقة الدفع بنجاح' : 'تم إضافة طريقة الدفع بنجاح', 'success');
+    closeModal();
+    loadMethods();
+  } catch (err) {
+    showToast('خطأ: ' + err.message, 'error');
+  }
+}
+
+async function deleteMethod(id) {
+  if (!confirm('هل أنت متأكد من حذف طريقة الدفع هذه؟')) return;
+  try {
+    const res = await fetch(API + '/' + id, { method: 'DELETE' });
+    const json = await res.json();
+    if (!json.success) throw new Error(json.message);
+    showToast('تم حذف طريقة الدفع بنجاح', 'success');
+    loadMethods();
+  } catch (err) {
+    showToast('خطأ: ' + err.message, 'error');
+  }
+}
+
+loadMethods();
+</script>
+</body>
+</html>

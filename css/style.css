@@ -885,19 +885,20 @@ body {
   background: var(--bg);
 }
 
-/* ═══ Results Vertical Marquee (two columns) ═══ */
+/* ═══ Results Horizontal Marquee (two rows) ═══ */
 .results-marquee {
   position: relative;
   width: 100%;
-  max-width: 900px;
+  max-width: 1200px;
   margin: 2.5rem auto 0;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 1fr;
   gap: 1.25rem;
   height: 720px;
   overflow: hidden;
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 8%, #000 92%, transparent 100%);
-          mask-image: linear-gradient(to bottom, transparent 0, #000 8%, #000 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
+          mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
 }
 
 .results-marquee-fade { display: none; }
@@ -905,43 +906,47 @@ body {
 .results-column {
   position: relative;
   overflow: hidden;
+  width: 100%;
   height: 100%;
 }
 
 .results-track {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 1.25rem;
+  height: 100%;
+  width: max-content;
   will-change: transform;
   transform: translate3d(0,0,0);
   backface-visibility: hidden;
 }
 
 .results-column--up .results-track {
-  animation: resultsScrollUp 32s linear infinite;
+  animation: resultsScrollLeft 40s linear infinite;
 }
 .results-column--down .results-track {
-  animation: resultsScrollDown 32s linear infinite;
+  animation: resultsScrollRight 40s linear infinite;
 }
 
 .results-column:hover .results-track {
   animation-play-state: paused;
 }
 
-@keyframes resultsScrollUp {
+@keyframes resultsScrollLeft {
   from { transform: translate3d(0, 0, 0); }
-  to   { transform: translate3d(0, -50%, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
 }
-@keyframes resultsScrollDown {
-  from { transform: translate3d(0, -50%, 0); }
+@keyframes resultsScrollRight {
+  from { transform: translate3d(-50%, 0, 0); }
   to   { transform: translate3d(0, 0, 0); }
 }
 
 .results-card {
   position: relative;
   flex: 0 0 auto;
-  width: 100%;
-  height: var(--h, 360px);
+  height: 100%;
+  width: var(--w, 280px);
+  aspect-ratio: 3 / 4;
   border-radius: 22px;
   overflow: hidden;
   box-shadow: 0 8px 30px rgba(0,0,0,0.18);

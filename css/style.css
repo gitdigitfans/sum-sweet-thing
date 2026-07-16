@@ -596,51 +596,104 @@ body {
 }
 
 .pain-points {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
 }
 
 .pain-item {
+  position: relative;
   display: flex;
   gap: 1rem;
   align-items: flex-start;
-  padding: 1.2rem;
-  background: rgba(0,0,0,0.02);
-  border-radius: 12px;
-  border: 1px solid rgba(0,0,0,0.04);
+  padding: 1.6rem 1.4rem;
+  background: linear-gradient(145deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.05);
   transition: var(--transition);
+  overflow: hidden;
+}
+
+.pain-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--red), transparent);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.pain-item::after {
+  content: "";
+  position: absolute;
+  top: -40%;
+  left: -20%;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(204,0,0,0.18), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
 }
 
 .pain-item:hover {
-  background: rgba(204, 0, 0, 0.04);
-  border-color: rgba(204, 0, 0, 0.12);
-  transform: translateX(-5px);
+  background: linear-gradient(145deg, rgba(204,0,0,0.08), rgba(255,255,255,0.02));
+  border-color: rgba(204, 0, 0, 0.35);
+  transform: translateY(-4px);
+  box-shadow: 0 14px 40px rgba(204, 0, 0, 0.25), inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+.pain-item:hover::before,
+.pain-item:hover::after {
+  opacity: 1;
 }
 
 .pain-item-icon {
-  width: 44px;
-  height: 44px;
-  min-width: 44px;
-  background: rgba(204, 0, 0, 0.08);
-  border-radius: 10px;
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  background: linear-gradient(135deg, rgba(204,0,0,0.9), rgba(140,0,0,0.85));
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  color: var(--white);
+  box-shadow: 0 6px 20px rgba(204,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.25);
+  transition: transform 0.35s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.pain-item:hover .pain-item-icon {
+  transform: scale(1.08) rotate(-4deg);
 }
 
 .pain-item h4 {
-  color: var(--gray-100);
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 0.3rem;
+  color: var(--white);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.45rem;
+  position: relative;
+  z-index: 1;
 }
 
 .pain-item p {
   color: var(--text-muted);
-  font-size: 0.9rem;
-  line-height: 1.7;
+  font-size: 0.92rem;
+  line-height: 1.75;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .pain-points {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ─── Mentor Section ─── */

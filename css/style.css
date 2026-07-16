@@ -1058,11 +1058,14 @@ body {
 
 /* Responsive */
 @media (max-width: 900px) {
-  .results-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+  .results-card { width: 240px; }
+  .results-card img { height: 320px; }
 }
 
 @media (max-width: 600px) {
-  .results-grid { grid-template-columns: 1fr; gap: 1rem; padding: 0 0.5rem; }
+  .results-card { width: 200px; }
+  .results-card img { height: 270px; }
+  .results-track { gap: 0.9rem; animation-duration: 45s; }
   .lightbox-arrow { width: 44px; height: 44px; }
   .lightbox-arrow svg { width: 24px; height: 24px; }
   .lightbox-prev { right: 0.75rem; }

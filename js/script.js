@@ -167,10 +167,11 @@ function initResultsLightbox() {
       const clone = child.cloneNode(true);
       clone.setAttribute('aria-hidden', 'true');
       clone.classList.add('results-card--clone');
-      // clones should not open lightbox
-      clone.addEventListener('click', (e) => {
-        const idx = parseInt(clone.getAttribute('data-index') || '0', 10);
-        open(idx);
+      const cloneImg = clone.querySelector('img');
+      clone.addEventListener('click', () => {
+        const src = cloneImg && cloneImg.src;
+        const idx = images.indexOf(src);
+        if (idx >= 0) open(idx);
       });
       track.appendChild(clone);
     });

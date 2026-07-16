@@ -161,16 +161,20 @@ function initResultsLightbox() {
     card.addEventListener('click', () => open(i));
   });
 
-  // Duplicate track for seamless marquee loop (clones do NOT open lightbox)
-  const track = document.getElementById('resultsTrack');
-  if (track && cards.length) {
-    const clone = track.cloneNode(true);
-    clone.setAttribute('aria-hidden', 'true');
-    Array.from(clone.children).forEach(c => c.classList.add('results-card--clone'));
-    Array.from(track.parentNode.children).forEach(() => {});
-    // Append clone children into the same track so translateX(-50%) loops seamlessly
-    Array.from(clone.children).forEach(child => track.appendChild(child));
-  }
+  // Duplicate each column's track children for seamless vertical marquee
+  document.querySelectorAll('.results-marquee .results-track').forEach(track => {
+    Array.from(track.children).forEach(child => {
+      const clone = child.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      clone.classList.add('results-card--clone');
+      // clones should not open lightbox
+      clone.addEventListener('click', (e) => {
+        const idx = parseInt(clone.getAttribute('data-index') || '0', 10);
+        open(idx);
+      });
+      track.appendChild(clone);
+    });
+  });
 
   if (closeBtn) closeBtn.addEventListener('click', close);
   if (prevBtn) prevBtn.addEventListener('click', () => navigate(-1));

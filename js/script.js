@@ -161,6 +161,17 @@ function initResultsLightbox() {
     card.addEventListener('click', () => open(i));
   });
 
+  // Duplicate track for seamless marquee loop (clones do NOT open lightbox)
+  const track = document.getElementById('resultsTrack');
+  if (track && cards.length) {
+    const clone = track.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    Array.from(clone.children).forEach(c => c.classList.add('results-card--clone'));
+    Array.from(track.parentNode.children).forEach(() => {});
+    // Append clone children into the same track so translateX(-50%) loops seamlessly
+    Array.from(clone.children).forEach(child => track.appendChild(child));
+  }
+
   if (closeBtn) closeBtn.addEventListener('click', close);
   if (prevBtn) prevBtn.addEventListener('click', () => navigate(-1));
   if (nextBtn) nextBtn.addEventListener('click', () => navigate(1));

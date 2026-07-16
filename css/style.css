@@ -885,41 +885,63 @@ body {
   background: var(--bg);
 }
 
-/* ═══ Results Marquee ═══ */
+/* ═══ Results Vertical Marquee (two columns) ═══ */
 .results-marquee {
   position: relative;
   width: 100%;
-  max-width: 1400px;
+  max-width: 900px;
   margin: 2.5rem auto 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  height: 720px;
   overflow: hidden;
-  padding: 1rem 0;
-  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%);
-          mask-image: linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 8%, #000 92%, transparent 100%);
+          mask-image: linear-gradient(to bottom, transparent 0, #000 8%, #000 92%, transparent 100%);
 }
 
 .results-marquee-fade { display: none; }
 
-.results-track {
-  display: flex;
-  gap: 1.25rem;
-  width: max-content;
-  animation: resultsScroll 60s linear infinite;
-  will-change: transform;
+.results-column {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
 }
 
-.results-marquee:hover .results-track {
+.results-track {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  will-change: transform;
+  transform: translate3d(0,0,0);
+  backface-visibility: hidden;
+}
+
+.results-column--up .results-track {
+  animation: resultsScrollUp 32s linear infinite;
+}
+.results-column--down .results-track {
+  animation: resultsScrollDown 32s linear infinite;
+}
+
+.results-column:hover .results-track {
   animation-play-state: paused;
 }
 
-@keyframes resultsScroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+@keyframes resultsScrollUp {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(0, -50%, 0); }
+}
+@keyframes resultsScrollDown {
+  from { transform: translate3d(0, -50%, 0); }
+  to   { transform: translate3d(0, 0, 0); }
 }
 
 .results-card {
   position: relative;
   flex: 0 0 auto;
-  width: 280px;
+  width: 100%;
+  height: var(--h, 360px);
   border-radius: 22px;
   overflow: hidden;
   box-shadow: 0 8px 30px rgba(0,0,0,0.18);
@@ -929,20 +951,17 @@ body {
 }
 
 .results-card:hover {
-  transform: translateY(-6px) scale(1.02);
+  transform: scale(1.03);
   box-shadow: 0 18px 45px rgba(204,0,0,0.28);
+  z-index: 2;
 }
 
 .results-card img {
   width: 100%;
-  height: 380px;
+  height: 100%;
   display: block;
   object-fit: cover;
   transition: transform 0.5s ease;
-}
-
-.results-card:hover img {
-  transform: scale(1.06);
 }
 
 .results-overlay {

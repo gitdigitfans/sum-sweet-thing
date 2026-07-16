@@ -1,5 +1,5 @@
 const seedData = {
-  nextId: 5,
+  nextId: 8,
   methods: [
     {
       id: 1,
@@ -35,11 +35,14 @@ const seedData = {
     },
     {
       id: 2,
-      name: 'بطاقة ائتمان / مدى',
+      name: 'فيزا / ماستر كارد',
       type: 'card',
       is_active: 1,
       sort_order: 2,
-      settings: { description: 'يمكنك الدفع عبر بطاقات الائتمان أو بطاقة مدى.' },
+      settings: {
+        description: 'ادفع بأمان عبر بطاقات Visa أو Mastercard من خلال بوابة الدفع الإلكتروني.',
+        instructions: 'سيتم توجيهك إلى بوابة الدفع الآمنة لإدخال بيانات البطاقة وإتمام العملية.'
+      },
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString()
     },
@@ -69,6 +72,51 @@ const seedData = {
         phone_number: '01012345678',
         account_holder_ar: 'أحمد كمال أحمد معوض',
         instructions: 'حوّل المبلغ عن طريق تطبيق InstaPay على المُعرّف أعلاه ثم ابعت لقطة شاشة للتحويل على واتساب.'
+      },
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString()
+    },
+    {
+      id: 5,
+      name: 'اتصالات كاش',
+      type: 'wallet',
+      is_active: 1,
+      sort_order: 5,
+      settings: {
+        provider: 'Etisalat Cash',
+        phone_number: '01112345678',
+        account_holder_ar: 'أحمد كمال أحمد معوض',
+        instructions: 'حوّل المبلغ على رقم محفظة اتصالات كاش أعلاه ثم ابعت صورة إثبات التحويل على واتساب لتفعيل اشتراكك.'
+      },
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString()
+    },
+    {
+      id: 6,
+      name: 'أورانج كاش',
+      type: 'wallet',
+      is_active: 1,
+      sort_order: 6,
+      settings: {
+        provider: 'Orange Cash',
+        phone_number: '01212345678',
+        account_holder_ar: 'أحمد كمال أحمد معوض',
+        instructions: 'حوّل المبلغ على رقم محفظة أورانج كاش أعلاه ثم ابعت صورة إثبات التحويل على واتساب لتفعيل اشتراكك.'
+      },
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString()
+    },
+    {
+      id: 7,
+      name: 'وي باي (WE Pay)',
+      type: 'wallet',
+      is_active: 1,
+      sort_order: 7,
+      settings: {
+        provider: 'WE Pay',
+        phone_number: '01512345678',
+        account_holder_ar: 'أحمد كمال أحمد معوض',
+        instructions: 'حوّل المبلغ على رقم محفظة WE Pay أعلاه ثم ابعت صورة إثبات التحويل على واتساب لتفعيل اشتراكك.'
       },
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString()

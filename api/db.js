@@ -1,5 +1,5 @@
 const seedData = {
-  nextId: 6,
+  nextId: 5,
   methods: [
     {
       id: 1,

@@ -1222,207 +1222,177 @@ body {
   border-radius: 4px;
 }
 
-/* ─── Journey Timeline ─── */
+/* ─── Journey Timeline (Cinematic Neon Glow) ─── */
 .journey-section {
-  background: var(--bg-card);
+  background: #0a0b0f;
+  position: relative;
+  overflow: hidden;
 }
+.journey-section::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 60%;
+  background: radial-gradient(circle, rgba(204, 0, 0, 0.08) 0%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+.journey-section .section-container { position: relative; z-index: 1; }
+.journey-section .section-title,
+.journey-section .section-title * { color: #fff; }
+.journey-section .section-label { color: var(--red); }
 
 .timeline-wrapper {
   position: relative;
-  max-width: 1100px;
+  max-width: 640px;
   margin: 3rem auto 0;
-  padding: 0 1rem;
+  padding: 1rem 1.25rem 3rem;
 }
 
-.timeline-track {
+/* Vertical glow spine (RTL: sits at the right edge of node column) */
+.timeline-glow-path {
   position: absolute;
-  top: 50%;
-  left: 5%;
-  right: 5%;
-  transform: translateY(-50%);
-  height: 3px;
+  top: 2.75rem;
+  bottom: 3rem;
+  right: calc(1.25rem + 19px);
+  width: 2px;
   z-index: 0;
 }
-
 .timeline-line {
   position: absolute;
   inset: 0;
-  background: var(--border-light);
+  background: linear-gradient(180deg, rgba(204, 0, 0, 0.35) 0%, rgba(204, 0, 0, 0.08) 60%, transparent 100%);
   border-radius: 2px;
 }
-
 .timeline-line-fill {
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 0;
-  height: 100%;
-  background: var(--red);
+  top: 0; left: 0; right: 0;
+  height: 0;
+  background: linear-gradient(180deg, #cc0000 0%, rgba(204, 0, 0, 0.3) 100%);
+  box-shadow: 0 0 12px rgba(204, 0, 0, 0.6);
   border-radius: 2px;
-  transition: width 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: height 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
+.timeline-line-fill.animated { height: 100%; }
 
-.timeline-line-fill.animated {
-  width: 100%;
-}
-
-.timeline-items {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  z-index: 1;
-  min-height: 420px;
-}
-
+/* Step row */
 .timeline-item {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   position: relative;
+  display: flex;
+  gap: 1.25rem;
+  padding-bottom: 2.25rem;
+  z-index: 1;
 }
+.timeline-item:last-of-type { padding-bottom: 0; }
 
-.timeline-above {
-  padding-bottom: 50%;
-}
-
-.timeline-below {
-  padding-top: 50%;
-}
-
-.timeline-connector {
-  width: 2px;
-  height: 40px;
-  background: var(--border-med);
-  transition: background 0.3s ease;
-}
-
-.timeline-item.animated .timeline-connector {
-  background: var(--red);
-}
-
+/* Node column */
 .timeline-node {
   position: relative;
-  z-index: 2;
-}
-
-.timeline-circle {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: var(--red);
-  color: var(--white);
+  flex-shrink: 0;
+  width: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 2px;
-  box-shadow: 0 4px 16px rgba(204, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
+  gap: 0.6rem;
 }
-
+.timeline-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #14151a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.5s ease, box-shadow 0.5s ease, transform 0.4s ease;
+}
+.timeline-circle-inner {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.5s ease, box-shadow 0.5s ease;
+}
 .timeline-circle .step-num {
   font-size: 0.65rem;
   font-weight: 700;
-  opacity: 0.8;
-  line-height: 1;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.02em;
+  transition: color 0.5s ease;
+}
+.timeline-icon {
+  color: rgba(255, 255, 255, 0.28);
+  transition: color 0.5s ease, transform 0.4s ease;
 }
 
-.timeline-circle svg {
-  opacity: 0.9;
+/* Body */
+.timeline-body {
+  padding-top: 0.25rem;
+  min-width: 0;
+  flex: 1;
 }
-
-.timeline-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-light);
-  border-radius: 24px;
-  padding: 1.5rem;
-  text-align: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-width: 180px;
-  width: 100%;
-}
-
-.timeline-card h4 {
-  color: var(--text-primary);
-  font-size: 0.95rem;
+.timeline-body h4 {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.05rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin: 0 0 0.35rem;
+  line-height: 1.4;
+  transition: color 0.5s ease;
 }
-
-.timeline-card p {
-  color: var(--text-muted);
-  font-size: 0.8rem;
-  line-height: 1.7;
+.timeline-body p {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.85rem;
+  line-height: 1.75;
   margin: 0;
+  transition: color 0.5s ease;
 }
 
-.timeline-item:hover .timeline-card {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+/* Ignited state (uses existing .reveal.active toggled by IntersectionObserver) */
+.timeline-item.reveal.active .timeline-circle {
+  border-color: rgba(204, 0, 0, 0.6);
+  box-shadow: 0 0 18px rgba(204, 0, 0, 0.35), inset 0 0 12px rgba(204, 0, 0, 0.08);
+}
+.timeline-item.reveal.active .timeline-circle-inner {
+  background: #cc0000;
+  box-shadow: 0 0 14px #cc0000, 0 0 30px rgba(204, 0, 0, 0.45);
+}
+.timeline-item.reveal.active .timeline-circle .step-num { color: #fff; }
+.timeline-item.reveal.active .timeline-icon { color: rgba(204, 0, 0, 0.85); }
+.timeline-item.reveal.active .timeline-body h4 { color: #fff; }
+.timeline-item.reveal.active .timeline-body p { color: rgba(255, 255, 255, 0.65); }
+
+.timeline-item:hover .timeline-circle { transform: scale(1.06); }
+.timeline-item:hover .timeline-icon { transform: translateY(-1px); }
+
+/* Ambient bottom glow */
+.timeline-ambient-glow {
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 260px;
+  height: 260px;
+  background: rgba(204, 0, 0, 0.07);
+  filter: blur(80px);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
-.timeline-item:hover .timeline-circle {
-  transform: scale(1.12);
-  box-shadow: 0 6px 24px rgba(204, 0, 0, 0.45);
+@media (max-width: 600px) {
+  .timeline-wrapper { padding: 0.5rem 1rem 2.5rem; }
+  .timeline-item { gap: 1rem; padding-bottom: 1.75rem; }
+  .timeline-body h4 { font-size: 1rem; }
+  .timeline-body p { font-size: 0.8rem; }
+  .timeline-glow-path { right: calc(1rem + 19px); }
 }
 
-.timeline-item:hover .timeline-connector {
-  background: var(--red);
-}
-
-@media (max-width: 992px) {
-  .timeline-wrapper { max-width: 100%; }
-  .timeline-items { min-height: 380px; }
-  .timeline-card { max-width: 150px; padding: 1.25rem; }
-  .timeline-above { padding-bottom: 45%; }
-  .timeline-below { padding-top: 45%; }
-}
-
-@media (max-width: 768px) {
-  .timeline-track { display: none; }
-  .timeline-items {
-    flex-direction: column;
-    min-height: auto;
-    gap: 0;
-  }
-  .timeline-item {
-    flex-direction: row;
-    padding: 0;
-    gap: 1rem;
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-  .timeline-above, .timeline-below {
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-  .timeline-connector {
-    width: 2px;
-    height: 30px;
-    min-height: 30px;
-    align-self: stretch;
-  }
-  .timeline-card {
-    max-width: none;
-    text-align: right;
-    flex: 1;
-  }
-  .timeline-node {
-    flex-shrink: 0;
-  }
-  .timeline-circle {
-    width: 56px;
-    height: 56px;
-  }
-  .timeline-item + .timeline-item {
-    margin-top: 0;
-  }
-}
 
 /* ─── Pricing Section (Coverflow 3D Carousel) ─── */
 .pricing-section {

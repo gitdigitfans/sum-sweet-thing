@@ -117,11 +117,19 @@ async function loadMethods() {
 }
 
 function getTypeClass(type) {
-  return type === 'bank_transfer' ? 'bank' : type === 'card' ? 'card' : 'wallet';
+  if (type === 'bank_transfer') return 'bank';
+  if (type === 'card') return 'card';
+  if (type === 'instapay') return 'wallet';
+  return 'wallet';
 }
 
 function getTypeLabel(type) {
-  const labels = { bank_transfer: 'تحويل بنكي', card: 'بطاقة ائتمان / مدى', wallet: 'محفظة إلكترونية' };
+  const labels = {
+    bank_transfer: 'تحويل بنكي',
+    card: 'بطاقة ائتمان / مدى',
+    wallet: 'محفظة إلكترونية',
+    instapay: 'انستا باي'
+  };
   return labels[type] || type;
 }
 

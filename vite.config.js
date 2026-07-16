@@ -9,6 +9,7 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         faq: resolve(__dirname, 'faq.html'),
         gold: resolve(__dirname, 'gold-challenge.html'),
+        checkout: resolve(__dirname, 'checkout.html'),
       },
     },
   },

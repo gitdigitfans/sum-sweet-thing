@@ -106,7 +106,7 @@ function initCounters() {
 }
 
 // ─── Experience Accordion ───
-function toggleAccordion(btn) {
+window.toggleAccordion = function toggleAccordion(btn) {
   const isOpen = btn.getAttribute('aria-expanded') === 'true';
   const body = btn.nextElementSibling;
   if (isOpen) {

@@ -2772,24 +2772,15 @@ body {
   .section { padding: 4rem 1.5rem; }
   .hero-title { font-size: 1.8rem; text-shadow: 0 2px 15px rgba(0,0,0,0.6); }
   .hero-subtitle { font-size: 1rem; text-shadow: 0 1px 10px rgba(0,0,0,0.5); }
-  .hero { padding-top: 80px; min-height: calc(100dvh - 60px); }
+  .hero { padding-top: 90px; min-height: auto; }
 
-  .hero-video-bg {
-    height: 100%;
+  .hero-content { gap: 1.5rem; }
+
+  .hero-media {
+    width: 78%;
+    max-width: 380px;
   }
 
-  .hero-video-bg video {
-    object-fit: cover;
-    object-position: center;
-  }
-
-  .hero-video-bg::after {
-    background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 100%);
-  }
-
-  .hero-content {
-    padding: 1rem 1rem;
-  }
 
   .hero-badge {
     text-shadow: 0 1px 4px rgba(0,0,0,0.4);

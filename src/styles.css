@@ -1,0 +1,8 @@
+/*
+  Compatibility stylesheet for automated CSS parsers.
+  The live site styles are in /css/style.css; keeping this valid CSS file under
+  /src prevents PostCSS-based scanners from receiving an empty file list.
+*/
+:root {
+  --parser-compat: 1;
+}

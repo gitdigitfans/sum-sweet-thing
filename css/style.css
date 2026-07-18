@@ -2715,27 +2715,32 @@ body {
   }
 
   .hero {
-    min-height: calc(100dvh - 80px);
+    min-height: auto;
     align-items: flex-start;
-    padding-top: 90px;
-    padding-bottom: 2rem;
-  }
-
-  .hero-video-bg {
-    height: 100%;
+    padding: 100px 1.25rem 2.5rem;
   }
 
   .hero-content {
-    padding: 1rem 1.5rem;
+    grid-template-columns: 1fr;
+    gap: 2rem;
     text-align: center;
-    display: flex;
-    flex-direction: column;
+  }
+
+  .hero-text {
     align-items: center;
+    order: 1;
+  }
+
+  .hero-media {
+    order: 2;
+    width: 82%;
+    max-width: 460px;
+    aspect-ratio: 1 / 1;
   }
 
   .hero-subtitle {
     text-align: center;
-    max-width: 500px;
+    max-width: 560px;
   }
 
   .hero-actions {
@@ -2748,6 +2753,7 @@ body {
     justify-content: center;
   }
   .hero-stat { flex: 1; min-width: 80px; }
+
 
   .testimonial-card { min-width: calc(100% - 0rem); }
 

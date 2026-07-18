@@ -1788,14 +1788,14 @@ body {
   .pricing-cards-scroll { min-height: 440px; perspective: 1400px; }
   .pricing-card { width: 240px; }
   .pricing-card[data-position="center"] {
-    transform: translate(-50%, -50%) translateZ(40px) rotateY(0) scale(0.7);
+    transform: translate(-50%, -50%) translateZ(40px) rotateY(0) scale(1);
   }
   .pricing-card[data-position="right"] {
-    transform: translate(calc(-50% + 110px), -50%) translateZ(-80px) rotateY(-42deg) scale(0.7);
+    transform: translate(calc(-50% + 150px), -50%) translateZ(-80px) rotateY(-42deg) scale(1);
     opacity: 0.45;
   }
   .pricing-card[data-position="left"] {
-    transform: translate(calc(-50% - 110px), -50%) translateZ(-80px) rotateY(42deg) scale(0.7);
+    transform: translate(calc(-50% - 150px), -50%) translateZ(-80px) rotateY(42deg) scale(1);
     opacity: 0.45;
   }
   .pricing-arrow { width: 42px; height: 42px; }
@@ -1819,14 +1819,14 @@ body {
   .pricing-cards-scroll { min-height: 410px; }
   .pricing-card { width: 215px; }
   .pricing-card[data-position="center"] {
-    transform: translate(-50%, -50%) translateZ(40px) rotateY(0) scale(0.6);
+    transform: translate(-50%, -50%) translateZ(40px) rotateY(0) scale(1);
   }
   .pricing-card[data-position="right"] {
-    transform: translate(calc(-50% + 78px), -50%) translateZ(-100px) rotateY(-45deg) scale(0.6);
+    transform: translate(calc(-50% + 130px), -50%) translateZ(-100px) rotateY(-45deg) scale(1);
     opacity: 0.3;
   }
   .pricing-card[data-position="left"] {
-    transform: translate(calc(-50% - 78px), -50%) translateZ(-100px) rotateY(45deg) scale(0.6);
+    transform: translate(calc(-50% - 130px), -50%) translateZ(-100px) rotateY(45deg) scale(1);
     opacity: 0.3;
   }
   .pricing-card-inner { padding: 1rem 0.9rem 0.9rem; }

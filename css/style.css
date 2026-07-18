@@ -1542,7 +1542,7 @@ body {
 
 /* Positions (JS toggles data-position) */
 .pricing-card[data-position="center"] {
-  transform: translate(-50%, -50%) translateZ(60px) rotateY(0deg) scale(1.08);
+  transform: translate(-50%, -50%) translateZ(60px) rotateY(0deg) scale(0.82);
   z-index: 5;
   filter: brightness(1) saturate(1);
   border-color: rgba(204, 0, 0, 0.55);
@@ -1555,14 +1555,14 @@ body {
 .pricing-card[data-position="center"]::before { opacity: 1; }
 
 .pricing-card[data-position="right"] {
-  transform: translate(calc(-50% + 260px), -50%) translateZ(-60px) rotateY(-38deg) scale(0.82);
+  transform: translate(calc(-50% + 240px), -50%) translateZ(-60px) rotateY(-38deg) scale(0.82);
   z-index: 3;
   filter: brightness(0.55) saturate(0.7);
   opacity: 0.9;
 }
 
 .pricing-card[data-position="left"] {
-  transform: translate(calc(-50% - 260px), -50%) translateZ(-60px) rotateY(38deg) scale(0.82);
+  transform: translate(calc(-50% - 240px), -50%) translateZ(-60px) rotateY(38deg) scale(0.82);
   z-index: 3;
   filter: brightness(0.55) saturate(0.7);
   opacity: 0.9;
@@ -1788,7 +1788,7 @@ body {
   .pricing-cards-scroll { min-height: 440px; perspective: 1400px; }
   .pricing-card { width: 240px; }
   .pricing-card[data-position="center"] {
-    transform: translate(-50%, -50%) translateZ(40px) rotateY(0) scale(1);
+    transform: translate(-50%, -50%) translateZ(40px) rotateY(0) scale(0.7);
   }
   .pricing-card[data-position="right"] {
     transform: translate(calc(-50% + 110px), -50%) translateZ(-80px) rotateY(-42deg) scale(0.7);
@@ -1818,6 +1818,9 @@ body {
 @media (max-width: 480px) {
   .pricing-cards-scroll { min-height: 410px; }
   .pricing-card { width: 215px; }
+  .pricing-card[data-position="center"] {
+    transform: translate(-50%, -50%) translateZ(40px) rotateY(0) scale(0.6);
+  }
   .pricing-card[data-position="right"] {
     transform: translate(calc(-50% + 78px), -50%) translateZ(-100px) rotateY(-45deg) scale(0.6);
     opacity: 0.3;

@@ -1788,7 +1788,7 @@ body {
   .pricing-cards-scroll { min-height: 440px; perspective: 1400px; }
   .pricing-card { width: 240px; }
   .pricing-card[data-position="center"] {
-    transform: translate(-50%, -50%) translateZ(40px) rotateY(0) scale(1);
+    transform: translate(-50%, -50%) translateZ(40px) rotateY(0) scale(0.7);
   }
   .pricing-card[data-position="right"] {
     transform: translate(calc(-50% + 110px), -50%) translateZ(-80px) rotateY(-42deg) scale(0.7);

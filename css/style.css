@@ -2779,7 +2779,20 @@ body {
     width: 100%;
   }
 
-  .btn { width: 100%; justify-content: center; }
+  .btn { width: auto; justify-content: center; }
+
+  .btn-glass-red {
+    padding: 0.35rem;
+    max-width: 92%;
+  }
+
+  .btn-glass-red .btn-glass-text {
+    padding: 0.55rem 1rem;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    display: block;
+    text-align: center;
+  }
 
   .pricing-grid { grid-template-columns: 1fr; }
   .faq-question { font-size: 0.95rem; padding: 1rem 1.25rem; }

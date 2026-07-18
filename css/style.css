@@ -220,52 +220,75 @@ body {
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: var(--white);
-  padding-top: 80px;
+  background: #0a0a0a;
+  padding: 100px 1.5rem 3rem;
 }
 
-.hero-video-bg {
+/* IRON TRAINER as decorative background word */
+.hero-bg-word {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-arabic, sans-serif);
+  font-weight: 900;
+  font-size: clamp(4rem, 18vw, 16rem);
+  letter-spacing: 0.05em;
+  color: #fff;
+  opacity: 0.04;
+  pointer-events: none;
+  white-space: nowrap;
   z-index: 1;
-  background: #111;
+  user-select: none;
 }
-
-.hero-video-bg video,
-.hero-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hero-poster-fallback {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  object-fit: cover;
-  z-index: 0;
-}
-
-.hero-video-bg::after {
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: linear-gradient(135deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 100%);
-  z-index: 2;
-}
-
-
 
 .hero-content {
   position: relative;
   z-index: 3;
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 2rem;
   width: 100%;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  align-items: center;
+  gap: 3rem;
 }
+
+.hero-text {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.hero-media {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 560px;
+  margin-inline: auto;
+  aspect-ratio: 1 / 1;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #111;
+  box-shadow: 0 30px 80px -20px rgba(0,0,0,0.6),
+              0 0 0 1px rgba(255,77,77,0.15) inset;
+}
+
+.hero-video,
+.hero-poster-fallback {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #000;
+}
+
+.hero-poster-fallback { z-index: 0; }
+.hero-video { z-index: 1; }
 
 .hero-badge {
   display: inline-flex;
@@ -278,7 +301,7 @@ body {
   font-size: 0.8rem;
   color: #FF6B6B;
   font-weight: 600;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   animation: fadeInUp 1s ease forwards;
 }
 
@@ -289,11 +312,11 @@ body {
 }
 
 .hero-title {
-  font-size: clamp(1.3rem, 3.5vw, 2.6rem);
+  font-size: clamp(1.5rem, 3.2vw, 2.6rem);
   font-weight: 800;
   line-height: 1.4;
   color: #FFFFFF;
-  margin-bottom: 1rem;
+  margin: 0;
   animation: fadeInUp 1s ease 0.2s forwards;
   opacity: 0;
   text-shadow: 0 2px 20px rgba(0,0,0,0.5);
@@ -311,24 +334,26 @@ body {
 }
 
 .hero-subtitle {
-  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  font-size: clamp(0.9rem, 1.4vw, 1rem);
   color: rgba(255,255,255,0.8);
   font-weight: 400;
   line-height: 1.7;
-  max-width: 680px;
-  margin-bottom: 1.8rem;
+  max-width: 620px;
+  margin: 0;
   animation: fadeInUp 1s ease 0.4s forwards;
   opacity: 0;
-  text-shadow: 0 1px 8px rgba(0,0,0,0.4);
 }
 
 .hero-actions {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  margin-top: 0.5rem;
   animation: fadeInUp 1s ease 0.6s forwards;
   opacity: 0;
 }
+
+
 
 .btn {
   display: inline-flex;
@@ -2690,27 +2715,32 @@ body {
   }
 
   .hero {
-    min-height: calc(100dvh - 80px);
+    min-height: auto;
     align-items: flex-start;
-    padding-top: 90px;
-    padding-bottom: 2rem;
-  }
-
-  .hero-video-bg {
-    height: 100%;
+    padding: 100px 1.25rem 2.5rem;
   }
 
   .hero-content {
-    padding: 1rem 1.5rem;
+    grid-template-columns: 1fr;
+    gap: 2rem;
     text-align: center;
-    display: flex;
-    flex-direction: column;
+  }
+
+  .hero-text {
     align-items: center;
+    order: 1;
+  }
+
+  .hero-media {
+    order: 2;
+    width: 82%;
+    max-width: 460px;
+    aspect-ratio: 1 / 1;
   }
 
   .hero-subtitle {
     text-align: center;
-    max-width: 500px;
+    max-width: 560px;
   }
 
   .hero-actions {
@@ -2723,6 +2753,7 @@ body {
     justify-content: center;
   }
   .hero-stat { flex: 1; min-width: 80px; }
+
 
   .testimonial-card { min-width: calc(100% - 0rem); }
 
@@ -2741,24 +2772,15 @@ body {
   .section { padding: 4rem 1.5rem; }
   .hero-title { font-size: 1.8rem; text-shadow: 0 2px 15px rgba(0,0,0,0.6); }
   .hero-subtitle { font-size: 1rem; text-shadow: 0 1px 10px rgba(0,0,0,0.5); }
-  .hero { padding-top: 80px; min-height: calc(100dvh - 60px); }
+  .hero { padding-top: 90px; min-height: auto; }
 
-  .hero-video-bg {
-    height: 100%;
+  .hero-content { gap: 1.5rem; }
+
+  .hero-media {
+    width: 78%;
+    max-width: 380px;
   }
 
-  .hero-video-bg video {
-    object-fit: cover;
-    object-position: center;
-  }
-
-  .hero-video-bg::after {
-    background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 100%);
-  }
-
-  .hero-content {
-    padding: 1rem 1rem;
-  }
 
   .hero-badge {
     text-shadow: 0 1px 4px rgba(0,0,0,0.4);

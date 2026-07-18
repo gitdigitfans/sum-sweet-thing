@@ -120,7 +120,7 @@ window.toggleAccordion = function toggleAccordion(btn) {
     body.style.maxHeight = body.scrollHeight + 60 + 'px';
     body.style.opacity = '1';
   }
-}
+};
 
 function initResultsLightbox() {
   const lightbox = document.getElementById('resultsLightbox');

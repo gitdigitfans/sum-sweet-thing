@@ -1696,12 +1696,25 @@ body {
   justify-content: center;
   padding: 0.95rem 1.5rem;
   font-size: 0.95rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-weight: 800;
+  color: #ffffff !important;
+  background: var(--red) !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.35);
+  letter-spacing: 0.3px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.pricing-card:not([data-position="center"]) .pricing-btn {
+  filter: none;
+}
+
+.pricing-card[data-position="center"] .pricing-btn {
+  box-shadow: 0 10px 28px rgba(204, 0, 0, 0.55), 0 0 0 1px rgba(255,255,255,0.08) inset;
 }
 
 .pricing-card[data-position="center"] .pricing-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(204, 0, 0, 0.4);
+  box-shadow: 0 12px 30px rgba(204, 0, 0, 0.6);
 }
 
 /* Arrows */

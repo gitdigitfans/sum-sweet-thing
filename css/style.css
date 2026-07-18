@@ -1766,7 +1766,7 @@ body {
 }
 
 @media (max-width: 768px) {
-  .pricing-cards-scroll { min-height: 560px; perspective: 1400px; }
+  .pricing-cards-scroll { min-height: 440px; perspective: 1400px; }
   .pricing-card { width: 240px; }
   .pricing-card[data-position="center"] {
     transform: translate(-50%, -50%) translateZ(40px) rotateY(0) scale(1);
@@ -1782,19 +1782,22 @@ body {
   .pricing-arrow { width: 42px; height: 42px; }
   .pricing-arrow--prev { left: 4px; }
   .pricing-arrow--next { right: 4px; }
-  .pricing-card-inner { padding: 1.5rem 1.15rem; }
-  .pricing-plan-name { font-size: 1.15rem; }
-  .pricing-plan-duration { font-size: 0.85rem; }
-  .pricing-price { font-size: 2rem; }
-  .pricing-currency { font-size: 0.9rem; }
-  .pricing-features { font-size: 0.85rem; }
-  .pricing-features li { padding: 0.4rem 0; }
-  .pricing-btn { padding: 0.7rem 1rem; font-size: 0.9rem; }
-  .pricing-card-badge { font-size: 0.7rem; padding: 0.3rem 0.75rem; }
+  .pricing-card-inner { padding: 1.1rem 1.05rem 1rem; }
+  .pricing-plan-name { font-size: 1rem; margin-bottom: 0.15rem; }
+  .pricing-plan-duration { font-size: 0.75rem; margin-bottom: 0.75rem; }
+  .pricing-price-block { margin-bottom: 0.9rem; }
+  .pricing-price { font-size: 1.9rem; }
+  .pricing-currency { font-size: 0.85rem; }
+  .pricing-divider { margin-bottom: 0.8rem; }
+  .pricing-features { font-size: 0.8rem; margin-bottom: 1rem; }
+  .pricing-features li { padding: 0.22rem 0; font-size: 0.8rem; line-height: 1.4; }
+  .pricing-features li svg { width: 14px; height: 14px; margin-top: 2px; }
+  .pricing-btn { padding: 0.6rem 0.9rem; font-size: 0.85rem; }
+  .pricing-card-badge { font-size: 0.65rem; padding: 0.25rem 0.7rem; top: -11px; }
 }
 
 @media (max-width: 480px) {
-  .pricing-cards-scroll { min-height: 520px; }
+  .pricing-cards-scroll { min-height: 410px; }
   .pricing-card { width: 215px; }
   .pricing-card[data-position="right"] {
     transform: translate(calc(-50% + 78px), -50%) translateZ(-100px) rotateY(-45deg) scale(0.6);
@@ -1804,9 +1807,11 @@ body {
     transform: translate(calc(-50% - 78px), -50%) translateZ(-100px) rotateY(45deg) scale(0.6);
     opacity: 0.3;
   }
-  .pricing-card-inner { padding: 1.35rem 1rem; }
-  .pricing-price { font-size: 1.8rem; }
+  .pricing-card-inner { padding: 1rem 0.9rem 0.9rem; }
+  .pricing-price { font-size: 1.7rem; }
+  .pricing-features li { padding: 0.18rem 0; font-size: 0.78rem; }
 }
+
 
 
 

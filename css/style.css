@@ -1889,12 +1889,14 @@ body {
   transition: background 0.3s ease;
   position: relative;
   overflow: hidden;
-  display: flex;
-  align-items: flex-start;
-  gap: 1.25rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 1.25rem;
+  align-items: start;
 }
 
-.feature-card > div:last-child { flex: 1; }
+.feature-card > .feature-icon { grid-row: span 2; margin-bottom: 0; align-self: center; }
+
 
 
 .feature-card::before {

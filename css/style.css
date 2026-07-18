@@ -1818,6 +1818,9 @@ body {
 @media (max-width: 480px) {
   .pricing-cards-scroll { min-height: 410px; }
   .pricing-card { width: 215px; }
+  .pricing-card[data-position="center"] {
+    transform: translate(-50%, -50%) translateZ(40px) rotateY(0) scale(0.6);
+  }
   .pricing-card[data-position="right"] {
     transform: translate(calc(-50% + 78px), -50%) translateZ(-100px) rotateY(-45deg) scale(0.6);
     opacity: 0.3;

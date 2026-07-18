@@ -2367,6 +2367,10 @@ body {
   transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
   overflow: hidden;
   box-shadow: 0 10px 40px -18px rgba(212, 168, 83, 0.18);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 1.15rem;
+  align-items: start;
 }
 
 .gold-rule-glow {
@@ -2408,8 +2412,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0;
   transition: transform 0.35s ease;
+  grid-column: 1;
+  grid-row: 1 / span 3;
+  align-self: start;
+  flex-shrink: 0;
 }
 
 .gold-rule-icon svg {

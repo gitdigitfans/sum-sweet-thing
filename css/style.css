@@ -1889,13 +1889,8 @@ body {
   transition: background 0.3s ease;
   position: relative;
   overflow: hidden;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  column-gap: 1.25rem;
-  align-items: start;
 }
 
-.feature-card > .feature-icon { grid-row: span 2; margin-bottom: 0; align-self: center; }
 
 
 

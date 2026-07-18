@@ -1793,7 +1793,7 @@ body {
 }
 
 @media (max-width: 768px) {
-  .pricing-cards-scroll { min-height: 440px; perspective: 1400px; }
+  .pricing-cards-scroll { min-height: 620px; perspective: 1400px; }
   .pricing-card { width: 240px; }
   .pricing-card[data-position="center"] {
     transform: translate(-50%, -50%) translateZ(40px) rotateY(0) scale(1);
@@ -1824,7 +1824,7 @@ body {
 }
 
 @media (max-width: 480px) {
-  .pricing-cards-scroll { min-height: 410px; }
+  .pricing-cards-scroll { min-height: 600px; }
   .pricing-card { width: 215px; }
   .pricing-card[data-position="center"] {
     transform: translate(-50%, -50%) translateZ(40px) rotateY(0) scale(1);

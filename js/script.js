@@ -106,7 +106,7 @@ function initCounters() {
 }
 
 // ─── Experience Accordion ───
-function toggleAccordion(btn) {
+window.toggleAccordion = function toggleAccordion(btn) {
   const isOpen = btn.getAttribute('aria-expanded') === 'true';
   const body = btn.nextElementSibling;
   if (isOpen) {
@@ -120,7 +120,7 @@ function toggleAccordion(btn) {
     body.style.maxHeight = body.scrollHeight + 60 + 'px';
     body.style.opacity = '1';
   }
-}
+};
 
 function initResultsLightbox() {
   const lightbox = document.getElementById('resultsLightbox');
